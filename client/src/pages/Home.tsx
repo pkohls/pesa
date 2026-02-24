@@ -278,7 +278,7 @@ export default function Home() {
             {/* Hero Section */}
             <section className="mb-16">
               <div className="max-w-3xl">
-                <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4 leading-tight" style={{textAlign: 'center'}}>
+                <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4 leading-tight" style={{textAlign: 'center', color: '#1557f5'}}>
                   Crescimento e Maturidade do <span className="bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent">PESA</span>
                 </h2>
                 <p className="text-lg text-slate-600 dark:text-slate-300 mb-6">
