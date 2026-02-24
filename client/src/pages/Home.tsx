@@ -1,8 +1,9 @@
 import { useState, useMemo } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { LineChart, Line, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, ComposedChart, Area, AreaChart } from "recharts";
-import { TrendingUp, Users, Target, Zap } from "lucide-react";
+import { Slider } from "@/components/ui/slider";
+import { LineChart, Line, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, ComposedChart, Area, AreaChart, PieChart, Pie, Cell } from "recharts";
+import { TrendingUp, Users, Target, Zap, DollarSign, TrendingDown } from "lucide-react";
 
 // Dados de crescimento de participação
 const growthData = [
@@ -17,6 +18,52 @@ const thematicData = [
   { name: "Textos Acadêmicos + IA", participants: 377, color: "#ec4899" },
   { name: "Outros Temas", participants: 68, color: "#06b6d4" },
 ];
+
+// Dados de impacto financeiro
+const financialScenarios = [
+  {
+    name: "Conservador",
+    reduction: 0.02,
+    color: "#ef4444",
+    description: "Redução de 2% na evasão"
+  },
+  {
+    name: "Moderado",
+    reduction: 0.04,
+    color: "#f59e0b",
+    description: "Redução de 4% na evasão"
+  },
+  {
+    name: "Otimista",
+    reduction: 0.06,
+    color: "#10b981",
+    description: "Redução de 6% na evasão"
+  },
+];
+
+const calculateFinancialImpact = (reduction: number) => {
+  const totalStudents = 15000;
+  const monthlyTuition = 1200;
+  const annualTuition = monthlyTuition * 12;
+  const cac = 2500;
+  const pesaCost = 635000;
+
+  const retainedStudents = Math.floor(totalStudents * reduction);
+  const recoveredRevenue = retainedStudents * annualTuition;
+  const cacSavings = retainedStudents * cac;
+  const totalImpact = recoveredRevenue + cacSavings;
+  const roi = ((totalImpact - pesaCost) / pesaCost) * 100;
+  const paybackMonths = (pesaCost / totalImpact) * 12;
+
+  return {
+    retainedStudents,
+    recoveredRevenue,
+    cacSavings,
+    totalImpact,
+    roi,
+    paybackMonths,
+  };
+};
 
 // Dados de projeção de maturidade
 const maturityData = [
@@ -56,10 +103,38 @@ const maturityData = [
 
 export default function Home() {
   const [selectedYear, setSelectedYear] = useState("2029");
+  const [selectedScenario, setSelectedScenario] = useState("Moderado");
+  const [tuitionValue, setTuitionValue] = useState(1200);
+  const [totalStudentsValue, setTotalStudentsValue] = useState(15000);
 
   const selectedPhase = useMemo(() => {
     return maturityData.find(d => d.year === selectedYear);
   }, [selectedYear]);
+
+  const currentScenario = useMemo(() => {
+    return financialScenarios.find(s => s.name === selectedScenario);
+  }, [selectedScenario]);
+
+  const financialData = useMemo(() => {
+    return calculateFinancialImpact(currentScenario?.reduction || 0.04);
+  }, [currentScenario]);
+
+  // Dados para gráfico de composição de impacto
+  const impactComposition = [
+    { name: "Receita Recuperada", value: financialData.recoveredRevenue, color: "#3b82f6" },
+    { name: "Economia CAC", value: financialData.cacSavings, color: "#8b5cf6" },
+  ];
+
+  // Dados para comparação de cenários
+  const scenarioComparison = financialScenarios.map(scenario => {
+    const data = calculateFinancialImpact(scenario.reduction);
+    return {
+      name: scenario.name,
+      roi: data.roi,
+      impacto: data.totalImpact / 1e6,
+      color: scenario.color,
+    };
+  });
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 dark:from-slate-950 dark:via-blue-950 dark:to-slate-900">
@@ -107,10 +182,11 @@ export default function Home() {
 
         {/* Tabs */}
         <Tabs defaultValue="growth" className="space-y-6">
-          <TabsList className="grid w-full grid-cols-3 lg:w-fit">
+          <TabsList className="grid w-full grid-cols-4 lg:w-fit">
             <TabsTrigger value="growth">Crescimento</TabsTrigger>
             <TabsTrigger value="thematic">Temáticas</TabsTrigger>
             <TabsTrigger value="maturity">Maturidade</TabsTrigger>
+            <TabsTrigger value="financial">Impacto Financeiro</TabsTrigger>
           </TabsList>
 
           {/* Tab 1: Crescimento */}
@@ -349,6 +425,216 @@ export default function Home() {
                 </Card>
               ))}
             </div>
+          </TabsContent>
+
+          {/* Tab 4: Impacto Financeiro */}
+          <TabsContent value="financial" className="space-y-6">
+            {/* Seletor de Cenários */}
+            <div className="flex gap-2 flex-wrap">
+              {financialScenarios.map((scenario) => (
+                <button
+                  key={scenario.name}
+                  onClick={() => setSelectedScenario(scenario.name)}
+                  className={`px-4 py-2 rounded-lg font-semibold transition-all text-white shadow-lg`}
+                  style={{
+                    backgroundColor: selectedScenario === scenario.name ? scenario.color : `${scenario.color}80`,
+                    opacity: selectedScenario === scenario.name ? 1 : 0.6,
+                  }}
+                >
+                  {scenario.name}
+                </button>
+              ))}
+            </div>
+
+            {/* KPIs Principais */}
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+              <Card className="border-0 shadow-lg">
+                <CardHeader className="pb-3">
+                  <CardTitle className="text-sm font-semibold text-slate-600 dark:text-slate-400 flex items-center gap-2">
+                    <Users className="w-4 h-4" />
+                    Alunos Retidos
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="text-3xl font-bold text-blue-600 dark:text-blue-400">{financialData.retainedStudents}</div>
+                  <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">Anualmente</p>
+                </CardContent>
+              </Card>
+
+              <Card className="border-0 shadow-lg">
+                <CardHeader className="pb-3">
+                  <CardTitle className="text-sm font-semibold text-slate-600 dark:text-slate-400 flex items-center gap-2">
+                    <DollarSign className="w-4 h-4" />
+                    Receita Recuperada
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="text-2xl font-bold text-emerald-600 dark:text-emerald-400">R$ {(financialData.recoveredRevenue / 1e6).toFixed(2)}M</div>
+                  <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">Mensalidades</p>
+                </CardContent>
+              </Card>
+
+              <Card className="border-0 shadow-lg">
+                <CardHeader className="pb-3">
+                  <CardTitle className="text-sm font-semibold text-slate-600 dark:text-slate-400 flex items-center gap-2">
+                    <TrendingDown className="w-4 h-4" />
+                    Economia CAC
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="text-2xl font-bold text-purple-600 dark:text-purple-400">R$ {(financialData.cacSavings / 1e6).toFixed(2)}M</div>
+                  <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">Sem nova captação</p>
+                </CardContent>
+              </Card>
+
+              <Card className="border-0 shadow-lg">
+                <CardHeader className="pb-3">
+                  <CardTitle className="text-sm font-semibold text-slate-600 dark:text-slate-400 flex items-center gap-2">
+                    <TrendingUp className="w-4 h-4" />
+                    ROI
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="text-3xl font-bold text-pink-600 dark:text-pink-400">{financialData.roi.toFixed(0)}%</div>
+                  <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">Retorno anual</p>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Detalhes do Cenário */}
+            <Card className="border-0 shadow-xl bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20">
+              <CardHeader>
+                <div className="flex items-center justify-between">
+                  <div>
+                    <CardTitle className="text-2xl">{selectedScenario}</CardTitle>
+                    <CardDescription className="text-base mt-2">{currentScenario?.description}</CardDescription>
+                  </div>
+                  <div className="text-right">
+                    <p className="text-sm text-slate-600 dark:text-slate-400">Impacto Total Anual</p>
+                    <p className="text-3xl font-bold text-blue-600 dark:text-blue-400">R$ {(financialData.totalImpact / 1e6).toFixed(2)}M</p>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                  <div>
+                    <p className="text-sm text-slate-600 dark:text-slate-400 mb-1">Payback</p>
+                    <p className="text-2xl font-bold text-slate-900 dark:text-white">{financialData.paybackMonths.toFixed(1)}</p>
+                    <p className="text-xs text-slate-500 dark:text-slate-400">meses</p>
+                  </div>
+                  <div>
+                    <p className="text-sm text-slate-600 dark:text-slate-400 mb-1">Custo PESA</p>
+                    <p className="text-2xl font-bold text-slate-900 dark:text-white">R$ 635K</p>
+                    <p className="text-xs text-slate-500 dark:text-slate-400">anual</p>
+                  </div>
+                  <div>
+                    <p className="text-sm text-slate-600 dark:text-slate-400 mb-1">Lucro Líquido</p>
+                    <p className="text-2xl font-bold text-emerald-600 dark:text-emerald-400">R$ {(((financialData.totalImpact || 0) - 635000) / 1e6).toFixed(2)}M</p>
+                    <p className="text-xs text-slate-500 dark:text-slate-400">anual</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Gráficos */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              {/* Gráfico de Composição */}
+              <Card className="border-0 shadow-lg">
+                <CardHeader>
+                  <CardTitle>Composição do Impacto Financeiro</CardTitle>
+                  <CardDescription>Receita vs. Economia CAC</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <ResponsiveContainer width="100%" height={250}>
+                    <PieChart>
+                      <Pie
+                        data={impactComposition}
+                        cx="50%"
+                        cy="50%"
+                        labelLine={false}
+                        label={({ name, value }) => `${name}: R$ ${(value / 1e6).toFixed(2)}M`}
+                        outerRadius={80}
+                        fill="#8884d8"
+                        dataKey="value"
+                      >
+                        {impactComposition.map((entry, index) => (
+                          <Cell key={`cell-${index}`} fill={entry.color} />
+                        ))}
+                      </Pie>
+                      <Tooltip formatter={(value: number) => `R$ ${(value / 1e6).toFixed(2)}M`} />
+                    </PieChart>
+                  </ResponsiveContainer>
+                </CardContent>
+              </Card>
+
+              {/* Gráfico de Comparação de Cenários */}
+              <Card className="border-0 shadow-lg">
+                <CardHeader>
+                  <CardTitle>Comparação de Cenários</CardTitle>
+                  <CardDescription>ROI e Impacto Total</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <ResponsiveContainer width="100%" height={250}>
+                    <BarChart data={scenarioComparison}>
+                      <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
+                      <XAxis dataKey="name" />
+                      <YAxis yAxisId="left" />
+                      <YAxis yAxisId="right" orientation="right" />
+                      <Tooltip
+                        contentStyle={{
+                          backgroundColor: "#1f2937",
+                          border: "1px solid #374151",
+                          borderRadius: "8px",
+                          color: "#f3f4f6"
+                        }}
+                      />
+                      <Legend />
+                      <Bar yAxisId="left" dataKey="impacto" fill="#3b82f6" name="Impacto (Milhões R$)" />
+                      <Bar yAxisId="right" dataKey="roi" fill="#10b981" name="ROI (%)" />
+                    </BarChart>
+                  </ResponsiveContainer>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Análise de Sensibilidade */}
+            <Card className="border-0 shadow-lg">
+              <CardHeader>
+                <CardTitle>Análise de Sensibilidade</CardTitle>
+                <CardDescription>Como variações nos parâmetros afetam o ROI</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <div>
+                  <div className="flex justify-between mb-2">
+                    <label className="text-sm font-semibold text-slate-700 dark:text-slate-300">Mensalidade Média: R$ {tuitionValue.toLocaleString()}</label>
+                  </div>
+                  <Slider
+                    value={[tuitionValue]}
+                    onValueChange={(value) => setTuitionValue(value[0])}
+                    min={800}
+                    max={2000}
+                    step={100}
+                    className="w-full"
+                  />
+                  <p className="text-xs text-slate-500 dark:text-slate-400 mt-2">Intervalo: R$ 800 - R$ 2.000</p>
+                </div>
+
+                <div>
+                  <div className="flex justify-between mb-2">
+                    <label className="text-sm font-semibold text-slate-700 dark:text-slate-300">Total de Alunos: {totalStudentsValue.toLocaleString()}</label>
+                  </div>
+                  <Slider
+                    value={[totalStudentsValue]}
+                    onValueChange={(value) => setTotalStudentsValue(value[0])}
+                    min={5000}
+                    max={30000}
+                    step={1000}
+                    className="w-full"
+                  />
+                  <p className="text-xs text-slate-500 dark:text-slate-400 mt-2">Intervalo: 5.000 - 30.000 alunos</p>
+                </div>
+              </CardContent>
+            </Card>
           </TabsContent>
         </Tabs>
 
