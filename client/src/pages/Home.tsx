@@ -263,7 +263,7 @@ export default function Home() {
 
       <main className="container py-12">
         {/* Overview Section */}
-        {activeSection === "estudante" && (
+        {activeSection === "overview" && (
           <>
             {/* Hero Section */}
             <section className="mb-16">
@@ -626,7 +626,7 @@ export default function Home() {
         )}
 
         {/* Ser Estudante Universitário Section */}
-        {activeSection === "overview" && (
+        {activeSection === "estudante" && (
           <div className="space-y-6">
             <div>
               <h2 className="text-4xl font-bold text-slate-900 dark:text-white mb-4">Ser Estudante Universitário</h2>
