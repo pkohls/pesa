@@ -167,6 +167,7 @@ export default function Home() {
 
   const menuItems = [
     { id: "overview", label: "Visão Geral", icon: Zap },
+    { id: "estudante", label: "Ser Estudante Universitário", icon: BookOpen },
     { id: "mentorship", label: "Programa de Mentoria", icon: Users2 },
     { id: "acolhida", label: "Acolhida Acadêmica", icon: Users },
     { id: "stay360", label: "Stay360", icon: BookOpen },
@@ -622,6 +623,224 @@ export default function Home() {
               </TabsContent>
             </Tabs>
           </>
+        )}
+
+        {/* Ser Estudante Universitário Section */}
+        {activeSection === "estudante" && (
+          <div className="space-y-6">
+            <div>
+              <h2 className="text-4xl font-bold text-slate-900 dark:text-white mb-4">Ser Estudante Universitário</h2>
+              <p className="text-lg text-slate-600 dark:text-slate-300">O PESA como setor estratégico de permanência estudantil e sucesso acadêmico</p>
+            </div>
+
+            {/* Apresentação do PESA */}
+            <Card className="border-0 shadow-lg bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20">
+              <CardHeader>
+                <CardTitle className="text-2xl">PESA: Setor Estratégico de Permanência Estudantil</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
+                  O PESA tem demonstrado valor institucional com evidências de alcance, monitoramento e impacto potencial. A decisão estratégica agora é <strong>institucionalizar plenamente o setor como unidade de inteligência acadêmica</strong>, com equipe ampliada e função de Learning Analytics.
+                </p>
+                <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
+                  O PESA atua como setor de permanência estudantil e sucesso acadêmico com foco na <strong>formação do estudante universitário</strong>. Seu diferencial está em trabalhar a permanência como <strong>política acadêmica estruturante</strong>, e não apenas como resposta a evasão.
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* Pilares do PESA */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* Formação Acadêmica */}
+              <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
+                <CardHeader className="pb-3">
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="w-10 h-10 rounded-lg bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center">
+                      <BookOpen className="w-6 h-6 text-blue-600 dark:text-blue-400" />
+                    </div>
+                    <CardTitle className="text-lg">Formação Acadêmica Preventiva</CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent className="space-y-3">
+                  <p className="text-sm text-slate-600 dark:text-slate-400">
+                    Desenvolvimento de competências essenciais para sucesso acadêmico:
+                  </p>
+                  <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+                    <li className="flex items-start gap-2">
+                      <span className="text-blue-600 dark:text-blue-400 mt-1">•</span>
+                      <span>Gestão do tempo e organização acadêmica</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-blue-600 dark:text-blue-400 mt-1">•</span>
+                      <span>Estratégias de estudo e aprendizagem</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-blue-600 dark:text-blue-400 mt-1">•</span>
+                      <span>Leitura e escrita acadêmica</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-blue-600 dark:text-blue-400 mt-1">•</span>
+                      <span>Avaliação e uso ético da IA</span>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+
+              {/* Mentoria e Acolhimento */}
+              <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
+                <CardHeader className="pb-3">
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="w-10 h-10 rounded-lg bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center">
+                      <Users2 className="w-6 h-6 text-purple-600 dark:text-purple-400" />
+                    </div>
+                    <CardTitle className="text-lg">Mentoria Universitária</CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent className="space-y-3">
+                  <p className="text-sm text-slate-600 dark:text-slate-400">
+                    Suporte personalizado para ingressantes e adaptação à vida acadêmica:
+                  </p>
+                  <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+                    <li className="flex items-start gap-2">
+                      <span className="text-purple-600 dark:text-purple-400 mt-1">•</span>
+                      <span>Acolhimento de estudantes ingressantes</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-purple-600 dark:text-purple-400 mt-1">•</span>
+                      <span>Desenvolvimento de sentimento de pertencimento</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-purple-600 dark:text-purple-400 mt-1">•</span>
+                      <span>Orientação para adaptação acadêmica</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-purple-600 dark:text-purple-400 mt-1">•</span>
+                      <span>Mentores experientes como referência</span>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+
+              {/* Articulação Intersetorial */}
+              <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
+                <CardHeader className="pb-3">
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="w-10 h-10 rounded-lg bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center">
+                      <Target className="w-6 h-6 text-emerald-600 dark:text-emerald-400" />
+                    </div>
+                    <CardTitle className="text-lg">Articulação Intersetorial</CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent className="space-y-3">
+                  <p className="text-sm text-slate-600 dark:text-slate-400">
+                    Integração de setores acadêmicos e de apoio para resposta institucional fortalecida:
+                  </p>
+                  <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+                    <li className="flex items-start gap-2">
+                      <span className="text-emerald-600 dark:text-emerald-400 mt-1">•</span>
+                      <span>Coordenação com departamentos acadêmicos</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-emerald-600 dark:text-emerald-400 mt-1">•</span>
+                      <span>Integração com setores de apoio estudantil</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-emerald-600 dark:text-emerald-400 mt-1">•</span>
+                      <span>Resposta institucional coordenada</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-emerald-600 dark:text-emerald-400 mt-1">•</span>
+                      <span>Fortalecimento de políticas integradas</span>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+
+              {/* Monitoramento */}
+              <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
+                <CardHeader className="pb-3">
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="w-10 h-10 rounded-lg bg-pink-100 dark:bg-pink-900/30 flex items-center justify-center">
+                      <BarChart3 className="w-6 h-6 text-pink-600 dark:text-pink-400" />
+                    </div>
+                    <CardTitle className="text-lg">Monitoramento e Inteligência</CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent className="space-y-3">
+                  <p className="text-sm text-slate-600 dark:text-slate-400">
+                    Sistema de dados para apoio a decisões estratégicas:
+                  </p>
+                  <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+                    <li className="flex items-start gap-2">
+                      <span className="text-pink-600 dark:text-pink-400 mt-1">•</span>
+                      <span>Base de dados estruturada de estudantes</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-pink-600 dark:text-pink-400 mt-1">•</span>
+                      <span>Recortes por perfil e condição de bolsa</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-pink-600 dark:text-pink-400 mt-1">•</span>
+                      <span>Avaliação de satisfação institucional</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-pink-600 dark:text-pink-400 mt-1">•</span>
+                      <span>Learning Analytics e apoio a decisão</span>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Visão Futura */}
+            <Card className="border-0 shadow-lg bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-indigo-900/20 dark:to-purple-900/20">
+              <CardHeader>
+                <CardTitle>Visão Futura: Unidade de Inteligência Acadêmica</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
+                  O PESA evoluirá para uma <strong>unidade de inteligência acadêmica</strong> com capacidade de:
+                </p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="flex gap-3">
+                    <div className="flex-shrink-0">
+                      <div className="flex items-center justify-center h-8 w-8 rounded-md bg-indigo-600 text-white text-sm font-bold">1</div>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-slate-900 dark:text-white">Equipe Ampliada</p>
+                      <p className="text-sm text-slate-600 dark:text-slate-400">Profissionais especializados em Learning Analytics e análise de dados</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-3">
+                    <div className="flex-shrink-0">
+                      <div className="flex items-center justify-center h-8 w-8 rounded-md bg-indigo-600 text-white text-sm font-bold">2</div>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-slate-900 dark:text-white">Learning Analytics</p>
+                      <p className="text-sm text-slate-600 dark:text-slate-400">Análise avançada de dados educacionais para insights estratégicos</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-3">
+                    <div className="flex-shrink-0">
+                      <div className="flex items-center justify-center h-8 w-8 rounded-md bg-indigo-600 text-white text-sm font-bold">3</div>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-slate-900 dark:text-white">Apoio Estratégico</p>
+                      <p className="text-sm text-slate-600 dark:text-slate-400">Suporte a tomada de decisão em nível institucional</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-3">
+                    <div className="flex-shrink-0">
+                      <div className="flex items-center justify-center h-8 w-8 rounded-md bg-indigo-600 text-white text-sm font-bold">4</div>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-slate-900 dark:text-white">Políticas Estruturantes</p>
+                      <p className="text-sm text-slate-600 dark:text-slate-400">Consolidação de permanência como política acadêmica institucional</p>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
         )}
 
         {/* Mentorship Section */}
