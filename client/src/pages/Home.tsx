@@ -1869,6 +1869,42 @@ export default function Home() {
                   </div>
                 </div>
 
+                {/* Matriz de Correlação com Permanência */}
+                <div className="bg-gradient-to-br from-indigo-50 to-blue-50 dark:from-indigo-900/20 dark:to-blue-900/20 p-6 rounded-lg">
+                  <h3 className="font-semibold text-slate-900 dark:text-white mb-4">Matriz de Correlação com Permanência Estudantil</h3>
+                  <p className="text-sm text-slate-600 dark:text-slate-400 mb-6">Correlação de Pearson entre fatores e o Fator de Permanência Estudantil (FEP) - Significância p &lt; 0,01</p>
+                  
+                  <ResponsiveContainer width="100%" height={350}>
+                    <BarChart data={[
+                      { fator: "Prática Docente", correlacao: 0.778, cor: "#4f46e5" },
+                      { fator: "Qualidade do Curso", correlacao: 0.574, cor: "#6366f1" },
+                      { fator: "Gestão Institucional", correlacao: 0.576, cor: "#818cf8" },
+                      { fator: "Dedicação do Estudante", correlacao: 0.332, cor: "#a5b4fc" }
+                    ]}>
+                      <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
+                      <XAxis dataKey="fator" />
+                      <YAxis domain={[0, 1]} label={{ value: "Correlação de Pearson (r)", angle: -90, position: "insideLeft" }} />
+                      <Tooltip contentStyle={{ backgroundColor: "#1f2937", border: "1px solid #374151", borderRadius: "8px", color: "#f3f4f6" }} formatter={(value) => typeof value === 'number' ? value.toFixed(3) : value} />
+                      <Bar dataKey="correlacao" fill="#4f46e5" name="Correlação" />
+                    </BarChart>
+                  </ResponsiveContainer>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+                    <div className="p-4 bg-white dark:bg-slate-800 rounded-lg">
+                      <p className="font-semibold text-slate-900 dark:text-white text-sm mb-2">Correlação Forte</p>
+                      <p className="text-xs text-slate-600 dark:text-slate-400"><strong>Prática Docente (r=0.778):</strong> Atuação do professor é o fator mais fortemente correlacionado com permanência estudantil</p>
+                    </div>
+                    <div className="p-4 bg-white dark:bg-slate-800 rounded-lg">
+                      <p className="font-semibold text-slate-900 dark:text-white text-sm mb-2">Correlação Moderada</p>
+                      <p className="text-xs text-slate-600 dark:text-slate-400"><strong>Qualidade do Curso (r=0.574) e Gestão Institucional (r=0.576):</strong> Fatores igualmente importantes para permanência</p>
+                    </div>
+                    <div className="p-4 bg-white dark:bg-slate-800 rounded-lg md:col-span-2">
+                      <p className="font-semibold text-slate-900 dark:text-white text-sm mb-2">Implicação Estratégica</p>
+                      <p className="text-xs text-slate-600 dark:text-slate-400">Os programas PESA devem priorizar: (1) Qualificação docente e prática pedagógica; (2) Melhoria contínua da gestão institucional; (3) Fortalecimento da qualidade dos cursos. A dedicação do estudante (r=0.332) é menos correlacionada, sugerindo que fatores institucionais têm maior impacto na permanência.</p>
+                    </div>
+                  </div>
+                </div>
+
                 {/* Implicações para o PESA */}
                 <div className="bg-gradient-to-r from-orange-100 to-rose-100 dark:from-orange-900/30 dark:to-rose-900/30 p-6 rounded-lg">
                   <h3 className="font-semibold text-slate-900 dark:text-white mb-3">Implicações para Programas PESA</h3>
