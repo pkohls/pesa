@@ -181,6 +181,14 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 dark:from-slate-950 dark:via-blue-950 dark:to-slate-900">
+      {/* Titulo Principal */}
+      <div className="bg-gradient-to-r from-blue-600 to-blue-700 text-white py-4 border-b border-blue-800">
+        <div className="container text-center">
+          <h1 className="text-2xl md:text-3xl font-bold">PESA - UCB</h1>
+          <p className="text-sm md:text-base text-blue-100 mt-1">Permanencia Estudantil e Sucesso Academico</p>
+        </div>
+      </div>
+
       {/* Header */}
       <header className="sticky top-0 z-50 backdrop-blur-md bg-white/80 dark:bg-slate-900/80 border-b border-slate-200 dark:border-slate-700">
         <div className="container py-4 flex items-center justify-between">
