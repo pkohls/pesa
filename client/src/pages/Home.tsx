@@ -1801,24 +1801,33 @@ export default function Home() {
                 <CardDescription>Análise dos fatores motivacionais que influenciam a decisão de continuar os estudos</CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
-                {/* Fatores Motivacionais */}
+                {/* Fatores Motivacionais - Dados Reais da Pesquisa */}
                 <div>
-                  <h3 className="font-semibold text-slate-900 dark:text-white mb-4">Principais Fatores Motivacionais Identificados</h3>
-                  <ResponsiveContainer width="100%" height={350}>
+                  <h3 className="font-semibold text-slate-900 dark:text-white mb-4">Fatores de Motivação para Permanência (Escala 1-5)</h3>
+                  <ResponsiveContainer width="100%" height={450}>
                     <BarChart data={[
-                      { fator: "Realização\nPessoal", percentual: 87, cor: "#f97316" },
-                      { fator: "Oportunidades\nCarreira", percentual: 84, cor: "#fb923c" },
-                      { fator: "Apoio\nFamiliar", percentual: 79, cor: "#fdba74" },
-                      { fator: "Qualidade de\nVida", percentual: 76, cor: "#fed7aa" },
-                      { fator: "Pertencimento\nAcadêmico", percentual: 82, cor: "#ffedd5" }
-                    ]}>
+                      { fator: "Projeto de Vida", media: 4.97 },
+                      { fator: "Vocação", media: 4.25 },
+                      { fator: "Qualidade do Curso", media: 4.24 },
+                      { fator: "Dedicação aos Estudos", media: 4.16 },
+                      { fator: "Melhorar Condições Econômicas", media: 4.15 },
+                      { fator: "Atuação do Professor", media: 4.13 },
+                      { fator: "Ambiente da Instituição", media: 4.12 },
+                      { fator: "Valorização Pessoal/Profissional", media: 4.12 },
+                      { fator: "Suporte Econômico", media: 4.1 },
+                      { fator: "Infraestrutura e Tecnologias", media: 4.05 },
+                      { fator: "Convivência com Colegas", media: 3.99 },
+                      { fator: "Conciliar Estudos e Trabalho", media: 3.84 },
+                      { fator: "Satisfação com Gestão IES", media: 3.83 }
+                    ]} layout="vertical">
                       <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
-                      <XAxis dataKey="fator" />
-                      <YAxis label={{ value: "% de Concordância", angle: -90, position: "insideLeft" }} domain={[0, 100]} />
-                      <Tooltip contentStyle={{ backgroundColor: "#1f2937", border: "1px solid #374151", borderRadius: "8px", color: "#f3f4f6" }} />
-                      <Bar dataKey="percentual" fill="#f97316" name="Concordância" />
+                      <XAxis type="number" domain={[0, 5]} />
+                      <YAxis dataKey="fator" type="category" width={200} />
+                      <Tooltip contentStyle={{ backgroundColor: "#1f2937", border: "1px solid #374151", borderRadius: "8px", color: "#f3f4f6" }} formatter={(value) => typeof value === 'number' ? value.toFixed(2) : value} />
+                      <Bar dataKey="media" fill="#f97316" name="Média" />
                     </BarChart>
                   </ResponsiveContainer>
+                  <p className="text-sm text-slate-600 dark:text-slate-400 mt-4"><strong>Nota:</strong> Escala de 1 a 5, onde 5 = máxima motivação. Dados coletados em pesquisa com 5.227 estudantes (2025).</p>
                 </div>
 
                 {/* Matriz de Motivação */}
