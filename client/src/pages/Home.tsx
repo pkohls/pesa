@@ -1793,6 +1793,97 @@ export default function Home() {
                 </div>
               </CardContent>
             </Card>
+
+            {/* Análise de Motivação para Permanência */}
+            <Card className="border-0 shadow-lg bg-gradient-to-br from-orange-50 to-rose-50 dark:from-orange-900/20 dark:to-rose-900/20">
+              <CardHeader>
+                <CardTitle className="text-2xl">Motivação para Permanência Estudantil</CardTitle>
+                <CardDescription>Análise dos fatores motivacionais que influenciam a decisão de continuar os estudos</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                {/* Fatores Motivacionais */}
+                <div>
+                  <h3 className="font-semibold text-slate-900 dark:text-white mb-4">Principais Fatores Motivacionais Identificados</h3>
+                  <ResponsiveContainer width="100%" height={350}>
+                    <BarChart data={[
+                      { fator: "Realização\nPessoal", percentual: 87, cor: "#f97316" },
+                      { fator: "Oportunidades\nCarreira", percentual: 84, cor: "#fb923c" },
+                      { fator: "Apoio\nFamiliar", percentual: 79, cor: "#fdba74" },
+                      { fator: "Qualidade de\nVida", percentual: 76, cor: "#fed7aa" },
+                      { fator: "Pertencimento\nAcadêmico", percentual: 82, cor: "#ffedd5" }
+                    ]}>
+                      <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
+                      <XAxis dataKey="fator" />
+                      <YAxis label={{ value: "% de Concordância", angle: -90, position: "insideLeft" }} domain={[0, 100]} />
+                      <Tooltip contentStyle={{ backgroundColor: "#1f2937", border: "1px solid #374151", borderRadius: "8px", color: "#f3f4f6" }} />
+                      <Bar dataKey="percentual" fill="#f97316" name="Concordância" />
+                    </BarChart>
+                  </ResponsiveContainer>
+                </div>
+
+                {/* Matriz de Motivação */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="space-y-4">
+                    <h3 className="font-semibold text-slate-900 dark:text-white">Motivação Intrínseca</h3>
+                    <div className="space-y-3">
+                      <div className="p-4 bg-white dark:bg-slate-800 rounded-lg border-l-4 border-orange-500">
+                        <p className="font-semibold text-slate-900 dark:text-white text-sm">Autorrealização</p>
+                        <p className="text-xs text-slate-600 dark:text-slate-400 mt-1">Desejo de desenvolvimento pessoal e intelectual (87% concordância)</p>
+                      </div>
+                      <div className="p-4 bg-white dark:bg-slate-800 rounded-lg border-l-4 border-orange-500">
+                        <p className="font-semibold text-slate-900 dark:text-white text-sm">Curiosidade Acadêmica</p>
+                        <p className="text-xs text-slate-600 dark:text-slate-400 mt-1">Interesse genuíno no conhecimento e aprendizado (75% concordância)</p>
+                      </div>
+                      <div className="p-4 bg-white dark:bg-slate-800 rounded-lg border-l-4 border-orange-500">
+                        <p className="font-semibold text-slate-900 dark:text-white text-sm">Pertencimento</p>
+                        <p className="text-xs text-slate-600 dark:text-slate-400 mt-1">Senso de comunidade e aceitação acadêmica (82% concordância)</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="space-y-4">
+                    <h3 className="font-semibold text-slate-900 dark:text-white">Motivação Extrínseca</h3>
+                    <div className="space-y-3">
+                      <div className="p-4 bg-white dark:bg-slate-800 rounded-lg border-l-4 border-rose-500">
+                        <p className="font-semibold text-slate-900 dark:text-white text-sm">Oportunidades Profissionais</p>
+                        <p className="text-xs text-slate-600 dark:text-slate-400 mt-1">Perspectiva de melhor inserção no mercado de trabalho (84% concordância)</p>
+                      </div>
+                      <div className="p-4 bg-white dark:bg-slate-800 rounded-lg border-l-4 border-rose-500">
+                        <p className="font-semibold text-slate-900 dark:text-white text-sm">Apoio Familiar</p>
+                        <p className="text-xs text-slate-600 dark:text-slate-400 mt-1">Suporte e incentivo da família para continuidade (79% concordância)</p>
+                      </div>
+                      <div className="p-4 bg-white dark:bg-slate-800 rounded-lg border-l-4 border-rose-500">
+                        <p className="font-semibold text-slate-900 dark:text-white text-sm">Qualidade de Vida Futura</p>
+                        <p className="text-xs text-slate-600 dark:text-slate-400 mt-1">Expectativa de melhoria na qualidade de vida (76% concordância)</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Implicações para o PESA */}
+                <div className="bg-gradient-to-r from-orange-100 to-rose-100 dark:from-orange-900/30 dark:to-rose-900/30 p-6 rounded-lg">
+                  <h3 className="font-semibold text-slate-900 dark:text-white mb-3">Implicações para Programas PESA</h3>
+                  <ul className="space-y-2 text-sm text-slate-700 dark:text-slate-300">
+                    <li className="flex gap-2">
+                      <span className="text-orange-600 dark:text-orange-400 font-bold">✓</span>
+                      <span><strong>Reforçar Pertencimento:</strong> Programas de mentoria e acolhida fortalecem motivação intrínseca (82% concordância em pertencimento)</span>
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="text-orange-600 dark:text-orange-400 font-bold">✓</span>
+                      <span><strong>Articulação com Carreira:</strong> Conectar formação acadêmica com oportunidades profissionais (84% motivação por carreira)</span>
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="text-orange-600 dark:text-orange-400 font-bold">✓</span>
+                      <span><strong>Envolvimento Familiar:</strong> Programas que incluem famílias aumentam suporte externo (79% apoio familiar)</span>
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="text-orange-600 dark:text-orange-400 font-bold">✓</span>
+                      <span><strong>Desenvolvimento Integral:</strong> Equilibrar motivação intrínseca (autorrealização) e extrínseca (oportunidades) para permanência sustentável</span>
+                    </li>
+                  </ul>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         )}
 
