@@ -639,8 +639,8 @@ export default function Home() {
         {activeSection === "estudante" && (
           <div className="space-y-6">
             <div>
-              <h2 className="text-4xl font-bold text-slate-900 dark:text-white mb-4">Ser Estudante Universitário</h2>
-              <p className="text-lg text-slate-600 dark:text-slate-300">O PESA como setor estratégico de permanência estudantil e sucesso acadêmico</p>
+              <h2 className="text-4xl font-bold text-slate-900 dark:text-white mb-4"></h2>
+              <p className="text-lg text-slate-600 dark:text-slate-300">O Setor de Permanência Estudantil e Sucesso Acadêmico (PESA) tem como objetivo criar, consolidar e articular a execução de políticas institucionais para promoção da permanência estudantil visando o sucesso acadêmico.</p>
             </div>
 
             {/* Apresentação do PESA */}
