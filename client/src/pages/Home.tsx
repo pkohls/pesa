@@ -282,7 +282,7 @@ export default function Home() {
                   Crescimento e Maturidade do <span className="bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent">PESA</span>
                 </h2>
                 <p className="text-lg text-slate-600 dark:text-slate-300 mb-6">
-                  Visualize a evolução da participação estudantil e a evolução institucional do Setor de Permanência Estudantil e Sucesso Acadêmico.
+                  Visualize a evolução da participação estudantil nas ações de formação estudantil do Setor de Permanência Estudantil e Sucesso Acadêmico.
                 </p>
                 <div className="flex gap-4 flex-wrap">
                   <div className="flex items-center gap-2 px-4 py-2 bg-blue-100 dark:bg-blue-900/30 rounded-lg">
