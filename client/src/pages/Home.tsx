@@ -173,6 +173,7 @@ export default function Home() {
     { id: "stay360", label: "Stay360", icon: BookOpen },
     { id: "research", label: "Pesquisa", icon: BarChart3 },
     { id: "financial", label: "Impacto Financeiro", icon: DollarSign },
+    { id: "acompanhamento", label: "Acompanhamento", icon: LineChart },
   ];
 
   const externalDashboardUrl = "https://8501-iqvglsfjns0hq4qylz31d-ee061de5.us1.manus.computer/#dashboard-de-impacto-financeiro-do-pesa";
@@ -1513,6 +1514,172 @@ export default function Home() {
                 </CardContent>
               </Card>
             </div>
+          </div>
+        )}
+
+        {/* Acompanhamento Section */}
+        {activeSection === "acompanhamento" && (
+          <div className="space-y-8">
+            <div>
+              <h2 className="text-4xl font-bold text-slate-900 dark:text-white mb-4">Acompanhamento da Pesquisa</h2>
+              <p className="text-lg text-slate-600 dark:text-slate-300">Análise de determinantes institucionais e individuais da permanência estudantil e sucesso acadêmico</p>
+            </div>
+
+            {/* Metodologia */}
+            <Card className="border-0 shadow-lg bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20">
+              <CardHeader>
+                <CardTitle className="text-2xl">Metodologia da Pesquisa</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <p className="font-semibold text-slate-900 dark:text-white mb-2">Tipo de Estudo</p>
+                    <p className="text-slate-700 dark:text-slate-300">Quantitativo, descritivo e explicativo-correlacional com delineamento transversal</p>
+                  </div>
+                  <div>
+                    <p className="font-semibold text-slate-900 dark:text-white mb-2">Amostra</p>
+                    <p className="text-slate-700 dark:text-slate-300">4.404 participantes válidos de cursos de graduação</p>
+                  </div>
+                  <div>
+                    <p className="font-semibold text-slate-900 dark:text-white mb-2">Coleta de Dados</p>
+                    <p className="text-slate-700 dark:text-slate-300">Questionário online (1º e 2º semestre de 2024)</p>
+                  </div>
+                  <div>
+                    <p className="font-semibold text-slate-900 dark:text-white mb-2">Análises Estatísticas</p>
+                    <p className="text-slate-700 dark:text-slate-300">Correlação de Spearman, regressão linear e testes t</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Variáveis Analisadas */}
+            <Card className="border-0 shadow-lg">
+              <CardHeader>
+                <CardTitle className="text-2xl">Variáveis Analisadas</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="space-y-3">
+                    <div className="flex gap-3">
+                      <span className="text-blue-600 dark:text-blue-400 text-lg">•</span>
+                      <div>
+                        <p className="font-semibold text-slate-900 dark:text-white">Adaptação Acadêmica e Social</p>
+                        <p className="text-sm text-slate-600 dark:text-slate-400">Integração do estudante ao contexto universitário</p>
+                      </div>
+                    </div>
+                    <div className="flex gap-3">
+                      <span className="text-blue-600 dark:text-blue-400 text-lg">•</span>
+                      <div>
+                        <p className="font-semibold text-slate-900 dark:text-white">Percepção da Qualidade do Curso</p>
+                        <p className="text-sm text-slate-600 dark:text-slate-400">Avaliação da experiência educacional</p>
+                      </div>
+                    </div>
+                    <div className="flex gap-3">
+                      <span className="text-blue-600 dark:text-blue-400 text-lg">•</span>
+                      <div>
+                        <p className="font-semibold text-slate-900 dark:text-white">Prática Docente</p>
+                        <p className="text-sm text-slate-600 dark:text-slate-400">Metodologias e engajamento dos professores</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="space-y-3">
+                    <div className="flex gap-3">
+                      <span className="text-blue-600 dark:text-blue-400 text-lg">•</span>
+                      <div>
+                        <p className="font-semibold text-slate-900 dark:text-white">Gestão Institucional</p>
+                        <p className="text-sm text-slate-600 dark:text-slate-400">Ambiente e políticas institucionais</p>
+                      </div>
+                    </div>
+                    <div className="flex gap-3">
+                      <span className="text-blue-600 dark:text-blue-400 text-lg">•</span>
+                      <div>
+                        <p className="font-semibold text-slate-900 dark:text-white">Dedicação aos Estudos</p>
+                        <p className="text-sm text-slate-600 dark:text-slate-400">Engajamento e investimento pessoal</p>
+                      </div>
+                    </div>
+                    <div className="flex gap-3">
+                      <span className="text-blue-600 dark:text-blue-400 text-lg">•</span>
+                      <div>
+                        <p className="font-semibold text-slate-900 dark:text-white">Dados Sociodemográficos</p>
+                        <p className="text-sm text-slate-600 dark:text-slate-400">Perfil e contexto dos estudantes</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Modelo MIPESA */}
+            <Card className="border-0 shadow-lg bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20">
+              <CardHeader>
+                <CardTitle className="text-2xl">Modelo MIPESA</CardTitle>
+                <CardDescription>Modelo Integracionista para Permanência Estudantil e Sucesso Acadêmico</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
+                  O Modelo MIPESA sintetiza as principais teorias de permanência estudantil (Tinto, Bean, Astin), ajustando-as às particularidades do contexto educacional brasileiro e latino-americano. O modelo considera fatores socioeconômicos, culturais e os múltiplos atores da permanência: estudantes, docentes, gestores e educadores administrativos.
+                </p>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+                  <div className="bg-white dark:bg-slate-800 p-4 rounded-lg">
+                    <p className="font-semibold text-emerald-700 dark:text-emerald-400 mb-2">Dimensão Acadêmica</p>
+                    <p className="text-sm text-slate-600 dark:text-slate-400">Qualidade do curso, atuação docente e engajamento</p>
+                  </div>
+                  <div className="bg-white dark:bg-slate-800 p-4 rounded-lg">
+                    <p className="font-semibold text-emerald-700 dark:text-emerald-400 mb-2">Dimensão Institucional</p>
+                    <p className="text-sm text-slate-600 dark:text-slate-400">Gestão, acolhimento e corresponsabilidade</p>
+                  </div>
+                  <div className="bg-white dark:bg-slate-800 p-4 rounded-lg">
+                    <p className="font-semibold text-emerald-700 dark:text-emerald-400 mb-2">Dimensão Individual</p>
+                    <p className="text-sm text-slate-600 dark:text-slate-400">Dedicação, motivação e autonomia</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Contexto Global */}
+            <Card className="border-0 shadow-lg">
+              <CardHeader>
+                <CardTitle className="text-2xl">Contexto Global de Evasão</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <p className="font-semibold text-slate-900 dark:text-white mb-3">Estados Unidos (2023)</p>
+                    <div className="space-y-2 text-sm">
+                      <div className="flex justify-between">
+                        <span className="text-slate-600 dark:text-slate-400">Taxa de evasão em calouros:</span>
+                        <span className="font-semibold text-slate-900 dark:text-white">18,3%</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-slate-600 dark:text-slate-400">Taxa de reingresso:</span>
+                        <span className="font-semibold text-slate-900 dark:text-white">2-3%</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-slate-600 dark:text-slate-400">Conclusão pós-retorno:</span>
+                        <span className="font-semibold text-slate-900 dark:text-white">14%</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <p className="font-semibold text-slate-900 dark:text-white mb-3">Brasil</p>
+                    <div className="space-y-2 text-sm">
+                      <div className="flex justify-between">
+                        <span className="text-slate-600 dark:text-slate-400">Taxa de reingresso (5 anos):</span>
+                        <span className="font-semibold text-slate-900 dark:text-white">9,65%</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-slate-600 dark:text-slate-400">Evasão representa:</span>
+                        <span className="font-semibold text-slate-900 dark:text-white">Ruptura definitiva</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-slate-600 dark:text-slate-400">Necessidade de:</span>
+                        <span className="font-semibold text-slate-900 dark:text-white">Políticas de reengajamento</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         )}
 
