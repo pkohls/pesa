@@ -914,7 +914,7 @@ export default function Home() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
-                  O PESA evoluirá para uma <strong>unidade de inteligência acadêmica</strong> com capacidade de:
+                  O PESA pretende atuar como uma <strong>unidade de inteligência acadêmica</strong> com capacidade de:
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="flex gap-3">
