@@ -1825,28 +1825,6 @@ export default function Home() {
           </div>
         )}
 
-        {/* Footer Stats */}
-        <section className="mt-16 pt-12 border-t border-slate-200 dark:border-slate-700">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-            <div className="text-center">
-              <p className="text-4xl font-bold text-blue-600 dark:text-blue-400">5.227</p>
-              <p className="text-sm text-slate-600 dark:text-slate-400 mt-2">Estudantes Monitorados</p>
-            </div>
-            <div className="text-center">
-              <p className="text-4xl font-bold text-purple-600 dark:text-purple-400">292</p>
-              <p className="text-sm text-slate-600 dark:text-slate-400 mt-2">Acolhida Acadêmica Bolsistas</p>
-            </div>
-            <div className="text-center">
-              <p className="text-4xl font-bold text-emerald-600 dark:text-emerald-400">138</p>
-              <p className="text-sm text-slate-600 dark:text-slate-400 mt-2">Estudantes Mentoria</p>
-            </div>
-            <div className="text-center">
-              <p className="text-4xl font-bold text-pink-600 dark:text-pink-400">100%</p>
-              <p className="text-sm text-slate-600 dark:text-slate-400 mt-2">Meta 2029</p>
-            </div>
-          </div>
-        </section>
-
         {/* Seção Análise Científica */}
         {activeSection === "ciencia" && (
           <section className="mb-16">
@@ -2290,6 +2268,28 @@ export default function Home() {
             </section>
           </main>
         )}
+
+        {/* Footer Stats */}
+        <section className="mt-16 pt-12 border-t border-slate-200 dark:border-slate-700">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div className="text-center">
+              <p className="text-4xl font-bold text-blue-600 dark:text-blue-400">5.227</p>
+              <p className="text-sm text-slate-600 dark:text-slate-400 mt-2">Estudantes Monitorados</p>
+            </div>
+            <div className="text-center">
+              <p className="text-4xl font-bold text-purple-600 dark:text-purple-400">292</p>
+              <p className="text-sm text-slate-600 dark:text-slate-400 mt-2">Acolhida Acadêmica Bolsistas</p>
+            </div>
+            <div className="text-center">
+              <p className="text-4xl font-bold text-emerald-600 dark:text-emerald-400">138</p>
+              <p className="text-sm text-slate-600 dark:text-slate-400 mt-2">Estudantes Mentoria</p>
+            </div>
+            <div className="text-center">
+              <p className="text-4xl font-bold text-pink-600 dark:text-pink-400">100%</p>
+              <p className="text-sm text-slate-600 dark:text-slate-400 mt-2">Meta 2029</p>
+            </div>
+          </div>
+        </section>
       </main>
 
       {/* Footer */}
