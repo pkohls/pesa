@@ -3,7 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Slider } from "@/components/ui/slider";
 import { LineChart, Line, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, ComposedChart, Area, AreaChart, PieChart, Pie, Cell } from "recharts";
-import { TrendingUp, Users, Target, Zap, DollarSign, TrendingDown, Menu, X, BookOpen, Users2, BarChart3 } from "lucide-react";
+import { TrendingUp, Users, Target, Zap, DollarSign, TrendingDown, Menu, X, BookOpen, Users2, BarChart3, LineChart as LineChartIcon } from "lucide-react";
 
 // Dados de crescimento de participação
 const growthData = [
@@ -174,6 +174,7 @@ export default function Home() {
     { id: "research", label: "Pesquisa", icon: BarChart3 },
     { id: "financial", label: "Impacto Financeiro", icon: DollarSign },
     { id: "acompanhamento", label: "Acompanhamento", icon: BarChart3 },
+    { id: "ciencia", label: "Análise Científica", icon: TrendingUp },
   ];
 
   const externalDashboardUrl = "https://8501-iqvglsfjns0hq4qylz31d-ee061de5.us1.manus.computer/#dashboard-de-impacto-financeiro-do-pesa";
@@ -1808,6 +1809,123 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        {/* Seção Análise Científica */}
+        {activeSection === "ciencia" && (
+          <section className="mb-16">
+            <div className="max-w-4xl">
+              <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4 leading-tight">Análise Científica</h2>
+              <p className="text-lg text-slate-600 dark:text-slate-300 mb-8">Fundamentos baseados em pesquisa com 5.227 estudantes sobre fatores de permanência e sucesso acadêmico</p>
+            </div>
+
+            {/* Hierarquia de Fatores */}
+            <Card className="border-0 shadow-lg mb-8">
+              <CardHeader>
+                <CardTitle className="text-2xl">Hierarquia de Fatores para Adaptação Acadêmica</CardTitle>
+                <CardDescription>Correlações identificadas na análise de 5.227 estudantes</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ResponsiveContainer width="100%" height={400}>
+                  <BarChart data={[
+                    { fator: "Dedicação\nEstudantil", correlacao: 0.573, tipo: "Comportamental" },
+                    { fator: "Atuação\nDocente", correlacao: 0.447, tipo: "Pedagógico" },
+                    { fator: "Qualidade\nCurso", correlacao: 0.428, tipo: "Curricular" },
+                    { fator: "Gestão\nIES", correlacao: 0.348, tipo: "Institucional" }
+                  ]}>
+                    <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
+                    <XAxis dataKey="fator" />
+                    <YAxis label={{ value: "Correlação (r)", angle: -90, position: "insideLeft" }} />
+                    <Tooltip contentStyle={{ backgroundColor: "#1f2937", border: "1px solid #374151", borderRadius: "8px", color: "#f3f4f6" }} />
+                    <Legend />
+                    <Bar dataKey="correlacao" fill="#3b82f6" name="Correlação com Adaptação Acadêmica" />
+                  </BarChart>
+                </ResponsiveContainer>
+                <div className="mt-6 space-y-3">
+                  <div className="p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
+                    <p className="font-semibold text-slate-900 dark:text-white">🥇 Dedicação Estudantil (r = 0.573)</p>
+                    <p className="text-sm text-slate-600 dark:text-slate-400 mt-1">Fator comportamental mais importante. Comportamentos específicos são mensuráveis e modificáveis através de programas PESA.</p>
+                  </div>
+                  <div className="p-4 bg-emerald-50 dark:bg-emerald-900/20 rounded-lg">
+                    <p className="font-semibold text-slate-900 dark:text-white">🥈 Atuação Docente (r = 0.447)</p>
+                    <p className="text-sm text-slate-600 dark:text-slate-400 mt-1">Fator pedagógico. Prática docente influencia significativamente a adaptação acadêmica dos estudantes.</p>
+                  </div>
+                  <div className="p-4 bg-amber-50 dark:bg-amber-900/20 rounded-lg">
+                    <p className="font-semibold text-slate-900 dark:text-white">🥉 Qualidade Curso (r = 0.428)</p>
+                    <p className="text-sm text-slate-600 dark:text-slate-400 mt-1">Fator curricular. Conteúdo, estrutura e relevância do curso impactam a adaptação acadêmica.</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Correlação entre Adaptações */}
+            <Card className="border-0 shadow-lg mb-8">
+              <CardHeader>
+                <CardTitle className="text-2xl">Correlação entre Adaptação Social e Acadêmica</CardTitle>
+                <CardDescription>Relação forte entre os dois tipos de adaptação (r = 0.632, p &lt; 0.001)</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div className="space-y-4">
+                    <div className="p-6 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-lg">
+                      <p className="text-4xl font-bold text-blue-600 dark:text-blue-400">0.632</p>
+                      <p className="text-sm text-slate-600 dark:text-slate-400 mt-2">Correlação forte entre adaptações</p>
+                      <p className="text-xs text-slate-500 dark:text-slate-500 mt-3">p &lt; 0.001 (altamente significativa)</p>
+                    </div>
+                    <div className="p-4 bg-slate-50 dark:bg-slate-800 rounded-lg">
+                      <p className="font-semibold text-slate-900 dark:text-white mb-2">Implicação:</p>
+                      <p className="text-sm text-slate-600 dark:text-slate-400">Estudantes que se adaptam bem socialmente tendem a se adaptar bem academicamente, e vice-versa. Programas holísticos são mais efetivos.</p>
+                    </div>
+                  </div>
+                  <div className="space-y-4">
+                    <div className="p-4 bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20 rounded-lg">
+                      <p className="font-semibold text-slate-900 dark:text-white mb-3">Padrão Diferenciado:</p>
+                      <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+                        <li>✓ <strong>Acadêmica:</strong> Mais dependente de dedicação pessoal</li>
+                        <li>✓ <strong>Social:</strong> Mais equilibrada entre fatores institucionais</li>
+                        <li>✓ <strong>Ambas:</strong> Influenciadas por qualidade do curso</li>
+                      </ul>
+                    </div>
+                    <div className="p-4 bg-slate-50 dark:bg-slate-800 rounded-lg">
+                      <p className="font-semibold text-slate-900 dark:text-white mb-2">Amostra:</p>
+                      <p className="text-sm text-slate-600 dark:text-slate-400">5.227 estudantes analisados com 105 variáveis, representando 8 instituições.</p>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Top 10 Cursos */}
+            <Card className="border-0 shadow-lg">
+              <CardHeader>
+                <CardTitle className="text-2xl">Top 10 Cursos - Adaptação Acadêmica</CardTitle>
+                <CardDescription>Média de adaptação acadêmica por programa (escala 1-5)</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ResponsiveContainer width="100%" height={350}>
+                  <BarChart data={[
+                    { curso: "Jornalismo", media: 4.455, n: 26 },
+                    { curso: "Enfermagem", media: 4.438, n: 169 },
+                    { curso: "Farmácia", media: 4.333, n: 108 },
+                    { curso: "Gastronomia", media: 4.288, n: 64 },
+                    { curso: "Medicina", media: 4.268, n: 74 },
+                    { curso: "Rel. Internacionais", media: 4.250, n: 155 },
+                    { curso: "Matemática", media: 4.182, n: 11 },
+                    { curso: "Pedagogia", media: 4.174, n: 91 },
+                    { curso: "Odontologia", media: 4.137, n: 420 },
+                    { curso: "Eng. Software", media: 4.059, n: 524 }
+                  ]} layout="vertical">
+                    <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
+                    <XAxis type="number" domain={[0, 5]} />
+                    <YAxis dataKey="curso" type="category" width={140} />
+                    <Tooltip contentStyle={{ backgroundColor: "#1f2937", border: "1px solid #374151", borderRadius: "8px", color: "#f3f4f6" }} />
+                    <Bar dataKey="media" fill="#10b981" name="Média de Adaptação" />
+                  </BarChart>
+                </ResponsiveContainer>
+                <p className="text-sm text-slate-600 dark:text-slate-400 mt-6"><strong>Nota:</strong> Tamanho da amostra varia por curso (n=11 a n=524). Programas com amostras maiores (Odontologia, Eng. Software) oferecem maior confiabilidade estatística.</p>
+              </CardContent>
+            </Card>
+          </section>
+        )}
       </main>
 
       {/* Footer */}
