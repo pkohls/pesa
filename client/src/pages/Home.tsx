@@ -133,7 +133,7 @@ export default function Home() {
   const [selectedScenario, setSelectedScenario] = useState("Moderado");
   const [tuitionValue, setTuitionValue] = useState(1200);
   const [totalStudentsValue, setTotalStudentsValue] = useState(15000);
-  const [activeSection, setActiveSection] = useState("overview");
+  const [activeSection, setActiveSection] = useState("estudante");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const selectedPhase = useMemo(() => {
