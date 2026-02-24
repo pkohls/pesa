@@ -1835,7 +1835,7 @@ export default function Home() {
               <p className="text-sm text-slate-600 dark:text-slate-400 mt-2">Acolhida Acadêmica Bolsistas</p>
             </div>
             <div className="text-center">
-              <p className="text-4xl font-bold text-emerald-600 dark:text-emerald-400">60</p>
+              <p className="text-4xl font-bold text-emerald-600 dark:text-emerald-400">138</p>
               <p className="text-sm text-slate-600 dark:text-slate-400 mt-2">Estudantes Mentoria</p>
             </div>
             <div className="text-center">
