@@ -287,6 +287,122 @@ export default function Home() {
               </div>
             </section>
 
+            {/* Comparativo: Permanência como Resposta vs Política Estruturante */}
+            <section className="mb-16">
+              <div className="mb-8">
+                <h3 className="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-4">O Diferencial do PESA</h3>
+                <p className="text-lg text-slate-600 dark:text-slate-300 mb-8">
+                  Entenda como o PESA se diferencia ao trabalhar permanência como <strong>política acadêmica estruturante</strong>, e não apenas como resposta a evasão.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                {/* Permanência como Resposta */}
+                <Card className="border-2 border-red-200 dark:border-red-900/50 shadow-lg hover:shadow-xl transition-shadow bg-gradient-to-br from-red-50 to-orange-50 dark:from-red-900/10 dark:to-orange-900/10">
+                  <CardHeader className="pb-4">
+                    <div className="flex items-center gap-3 mb-2">
+                      <div className="w-10 h-10 rounded-lg bg-red-100 dark:bg-red-900/30 flex items-center justify-center">
+                        <TrendingDown className="w-6 h-6 text-red-600 dark:text-red-400" />
+                      </div>
+                      <CardTitle className="text-xl text-red-700 dark:text-red-400">Permanência como Resposta</CardTitle>
+                    </div>
+                    <p className="text-sm text-red-600 dark:text-red-300 font-semibold">Abordagem Tradicional</p>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <div className="space-y-3">
+                      <div className="flex gap-3">
+                        <span className="text-red-600 dark:text-red-400 text-lg">•</span>
+                        <div>
+                          <p className="font-semibold text-slate-900 dark:text-white">Reativa</p>
+                          <p className="text-sm text-slate-600 dark:text-slate-400">Atua após identificação de risco de evasão</p>
+                        </div>
+                      </div>
+                      <div className="flex gap-3">
+                        <span className="text-red-600 dark:text-red-400 text-lg">•</span>
+                        <div>
+                          <p className="font-semibold text-slate-900 dark:text-white">Focada em Sintomas</p>
+                          <p className="text-sm text-slate-600 dark:text-slate-400">Trata problemas imediatos de permanência</p>
+                        </div>
+                      </div>
+                      <div className="flex gap-3">
+                        <span className="text-red-600 dark:text-red-400 text-lg">•</span>
+                        <div>
+                          <p className="font-semibold text-slate-900 dark:text-white">Isolada</p>
+                          <p className="text-sm text-slate-600 dark:text-slate-400">Ações desconectadas de políticas acadêmicas</p>
+                        </div>
+                      </div>
+                      <div className="flex gap-3">
+                        <span className="text-red-600 dark:text-red-400 text-lg">•</span>
+                        <div>
+                          <p className="font-semibold text-slate-900 dark:text-white">Curto Prazo</p>
+                          <p className="text-sm text-slate-600 dark:text-slate-400">Resultados temporários e limitados</p>
+                        </div>
+                      </div>
+                      <div className="flex gap-3">
+                        <span className="text-red-600 dark:text-red-400 text-lg">•</span>
+                        <div>
+                          <p className="font-semibold text-slate-900 dark:text-white">Sem Inteligência</p>
+                          <p className="text-sm text-slate-600 dark:text-slate-400">Decisões baseadas em intuição, não em dados</p>
+                        </div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Permanência como Política Estruturante */}
+                <Card className="border-2 border-emerald-200 dark:border-emerald-900/50 shadow-lg hover:shadow-xl transition-shadow bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-900/10 dark:to-teal-900/10">
+                  <CardHeader className="pb-4">
+                    <div className="flex items-center gap-3 mb-2">
+                      <div className="w-10 h-10 rounded-lg bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center">
+                        <TrendingUp className="w-6 h-6 text-emerald-600 dark:text-emerald-400" />
+                      </div>
+                      <CardTitle className="text-xl text-emerald-700 dark:text-emerald-400">Permanência como Política Estruturante</CardTitle>
+                    </div>
+                    <p className="text-sm text-emerald-600 dark:text-emerald-300 font-semibold">Diferencial do PESA</p>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <div className="space-y-3">
+                      <div className="flex gap-3">
+                        <span className="text-emerald-600 dark:text-emerald-400 text-lg">✓</span>
+                        <div>
+                          <p className="font-semibold text-slate-900 dark:text-white">Preventiva</p>
+                          <p className="text-sm text-slate-600 dark:text-slate-400">Forma estudantes antes de problemas surgirem</p>
+                        </div>
+                      </div>
+                      <div className="flex gap-3">
+                        <span className="text-emerald-600 dark:text-emerald-400 text-lg">✓</span>
+                        <div>
+                          <p className="font-semibold text-slate-900 dark:text-white">Focada em Raízes</p>
+                          <p className="text-sm text-slate-600 dark:text-slate-400">Desenvolve competências acadêmicas fundamentais</p>
+                        </div>
+                      </div>
+                      <div className="flex gap-3">
+                        <span className="text-emerald-600 dark:text-emerald-400 text-lg">✓</span>
+                        <div>
+                          <p className="font-semibold text-slate-900 dark:text-white">Integrada</p>
+                          <p className="text-sm text-slate-600 dark:text-slate-400">Articulada com políticas acadêmicas institucionais</p>
+                        </div>
+                      </div>
+                      <div className="flex gap-3">
+                        <span className="text-emerald-600 dark:text-emerald-400 text-lg">✓</span>
+                        <div>
+                          <p className="font-semibold text-slate-900 dark:text-white">Longo Prazo</p>
+                          <p className="text-sm text-slate-600 dark:text-slate-400">Impacto sustentável e transformador</p>
+                        </div>
+                      </div>
+                      <div className="flex gap-3">
+                        <span className="text-emerald-600 dark:text-emerald-400 text-lg">✓</span>
+                        <div>
+                          <p className="font-semibold text-slate-900 dark:text-white">Baseada em Dados</p>
+                          <p className="text-sm text-slate-600 dark:text-slate-400">Learning Analytics e inteligência acadêmica</p>
+                        </div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </section>
+
             {/* Tabs */}
             <Tabs defaultValue="growth" className="space-y-6">
               <TabsList className="grid w-full grid-cols-4 lg:w-fit">
