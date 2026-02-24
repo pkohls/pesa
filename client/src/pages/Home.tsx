@@ -1794,121 +1794,13 @@ export default function Home() {
               </CardContent>
             </Card>
 
-            {/* Análise de Motivação para Permanência */}
-            <Card className="border-0 shadow-lg bg-gradient-to-br from-orange-50 to-rose-50 dark:from-orange-900/20 dark:to-rose-900/20">
+            {/* Implicações para o PESA */}
+            <Card className="border-0 shadow-lg bg-gradient-to-r from-orange-100 to-rose-100 dark:from-orange-900/30 dark:to-rose-900/30">
               <CardHeader>
-                <CardTitle className="text-2xl">Motivação para Permanência Estudantil</CardTitle>
-                <CardDescription>Análise dos fatores motivacionais que influenciam a decisão de continuar os estudos</CardDescription>
+                <CardTitle className="text-2xl">Implicações para Programas PESA</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-6">
-                {/* Fatores Motivacionais - Dados Reais da Pesquisa */}
-                <div>
-                  <h3 className="font-semibold text-slate-900 dark:text-white mb-4">Fatores de Motivação para Permanência (Escala 1-5)</h3>
-                  <ResponsiveContainer width="100%" height={450}>
-                    <BarChart data={[
-                      { fator: "Projeto de Vida", media: 4.97 },
-                      { fator: "Vocação", media: 4.25 },
-                      { fator: "Qualidade do Curso", media: 4.24 },
-                      { fator: "Dedicação aos Estudos", media: 4.16 },
-                      { fator: "Melhorar Condições Econômicas", media: 4.15 },
-                      { fator: "Atuação do Professor", media: 4.13 },
-                      { fator: "Ambiente da Instituição", media: 4.12 },
-                      { fator: "Valorização Pessoal/Profissional", media: 4.12 },
-                      { fator: "Suporte Econômico", media: 4.1 },
-                      { fator: "Infraestrutura e Tecnologias", media: 4.05 },
-                      { fator: "Convivência com Colegas", media: 3.99 },
-                      { fator: "Conciliar Estudos e Trabalho", media: 3.84 },
-                      { fator: "Satisfação com Gestão IES", media: 3.83 }
-                    ]} layout="vertical">
-                      <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
-                      <XAxis type="number" domain={[0, 5]} />
-                      <YAxis dataKey="fator" type="category" width={200} />
-                      <Tooltip contentStyle={{ backgroundColor: "#1f2937", border: "1px solid #374151", borderRadius: "8px", color: "#f3f4f6" }} formatter={(value) => typeof value === 'number' ? value.toFixed(2) : value} />
-                      <Bar dataKey="media" fill="#f97316" name="Média" />
-                    </BarChart>
-                  </ResponsiveContainer>
-                  <p className="text-sm text-slate-600 dark:text-slate-400 mt-4"><strong>Nota:</strong> Escala de 1 a 5, onde 5 = máxima motivação. Dados coletados em pesquisa com 5.227 estudantes (2025).</p>
-                </div>
-
-                {/* Matriz de Motivação */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="space-y-4">
-                    <h3 className="font-semibold text-slate-900 dark:text-white">Motivação Intrínseca</h3>
-                    <div className="space-y-3">
-                      <div className="p-4 bg-white dark:bg-slate-800 rounded-lg border-l-4 border-orange-500">
-                        <p className="font-semibold text-slate-900 dark:text-white text-sm">Autorrealização</p>
-                        <p className="text-xs text-slate-600 dark:text-slate-400 mt-1">Desejo de desenvolvimento pessoal e intelectual (87% concordância)</p>
-                      </div>
-                      <div className="p-4 bg-white dark:bg-slate-800 rounded-lg border-l-4 border-orange-500">
-                        <p className="font-semibold text-slate-900 dark:text-white text-sm">Curiosidade Acadêmica</p>
-                        <p className="text-xs text-slate-600 dark:text-slate-400 mt-1">Interesse genuíno no conhecimento e aprendizado (75% concordância)</p>
-                      </div>
-                      <div className="p-4 bg-white dark:bg-slate-800 rounded-lg border-l-4 border-orange-500">
-                        <p className="font-semibold text-slate-900 dark:text-white text-sm">Pertencimento</p>
-                        <p className="text-xs text-slate-600 dark:text-slate-400 mt-1">Senso de comunidade e aceitação acadêmica (82% concordância)</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="space-y-4">
-                    <h3 className="font-semibold text-slate-900 dark:text-white">Motivação Extrínseca</h3>
-                    <div className="space-y-3">
-                      <div className="p-4 bg-white dark:bg-slate-800 rounded-lg border-l-4 border-rose-500">
-                        <p className="font-semibold text-slate-900 dark:text-white text-sm">Oportunidades Profissionais</p>
-                        <p className="text-xs text-slate-600 dark:text-slate-400 mt-1">Perspectiva de melhor inserção no mercado de trabalho (84% concordância)</p>
-                      </div>
-                      <div className="p-4 bg-white dark:bg-slate-800 rounded-lg border-l-4 border-rose-500">
-                        <p className="font-semibold text-slate-900 dark:text-white text-sm">Apoio Familiar</p>
-                        <p className="text-xs text-slate-600 dark:text-slate-400 mt-1">Suporte e incentivo da família para continuidade (79% concordância)</p>
-                      </div>
-                      <div className="p-4 bg-white dark:bg-slate-800 rounded-lg border-l-4 border-rose-500">
-                        <p className="font-semibold text-slate-900 dark:text-white text-sm">Qualidade de Vida Futura</p>
-                        <p className="text-xs text-slate-600 dark:text-slate-400 mt-1">Expectativa de melhoria na qualidade de vida (76% concordância)</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Matriz de Correlação com Permanência */}
-                <div className="bg-gradient-to-br from-indigo-50 to-blue-50 dark:from-indigo-900/20 dark:to-blue-900/20 p-6 rounded-lg">
-                  <h3 className="font-semibold text-slate-900 dark:text-white mb-4">Matriz de Correlação com Permanência Estudantil</h3>
-                  <p className="text-sm text-slate-600 dark:text-slate-400 mb-6">Correlação de Pearson entre fatores e o Fator de Permanência Estudantil (FEP) - Significância p &lt; 0,01</p>
-                  
-                  <ResponsiveContainer width="100%" height={350}>
-                    <BarChart data={[
-                      { fator: "Prática Docente", correlacao: 0.778, cor: "#4f46e5" },
-                      { fator: "Qualidade do Curso", correlacao: 0.574, cor: "#6366f1" },
-                      { fator: "Gestão Institucional", correlacao: 0.576, cor: "#818cf8" },
-                      { fator: "Dedicação do Estudante", correlacao: 0.332, cor: "#a5b4fc" }
-                    ]}>
-                      <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
-                      <XAxis dataKey="fator" />
-                      <YAxis domain={[0, 1]} label={{ value: "Correlação de Pearson (r)", angle: -90, position: "insideLeft" }} />
-                      <Tooltip contentStyle={{ backgroundColor: "#1f2937", border: "1px solid #374151", borderRadius: "8px", color: "#f3f4f6" }} formatter={(value) => typeof value === 'number' ? value.toFixed(3) : value} />
-                      <Bar dataKey="correlacao" fill="#4f46e5" name="Correlação" />
-                    </BarChart>
-                  </ResponsiveContainer>
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
-                    <div className="p-4 bg-white dark:bg-slate-800 rounded-lg">
-                      <p className="font-semibold text-slate-900 dark:text-white text-sm mb-2">Correlação Forte</p>
-                      <p className="text-xs text-slate-600 dark:text-slate-400"><strong>Prática Docente (r=0.778):</strong> Atuação do professor é o fator mais fortemente correlacionado com permanência estudantil</p>
-                    </div>
-                    <div className="p-4 bg-white dark:bg-slate-800 rounded-lg">
-                      <p className="font-semibold text-slate-900 dark:text-white text-sm mb-2">Correlação Moderada</p>
-                      <p className="text-xs text-slate-600 dark:text-slate-400"><strong>Qualidade do Curso (r=0.574) e Gestão Institucional (r=0.576):</strong> Fatores igualmente importantes para permanência</p>
-                    </div>
-                    <div className="p-4 bg-white dark:bg-slate-800 rounded-lg md:col-span-2">
-                      <p className="font-semibold text-slate-900 dark:text-white text-sm mb-2">Implicação Estratégica</p>
-                      <p className="text-xs text-slate-600 dark:text-slate-400">Os programas PESA devem priorizar: (1) Qualificação docente e prática pedagógica; (2) Melhoria contínua da gestão institucional; (3) Fortalecimento da qualidade dos cursos. A dedicação do estudante (r=0.332) é menos correlacionada, sugerindo que fatores institucionais têm maior impacto na permanência.</p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Implicações para o PESA */}
-                <div className="bg-gradient-to-r from-orange-100 to-rose-100 dark:from-orange-900/30 dark:to-rose-900/30 p-6 rounded-lg">
-                  <h3 className="font-semibold text-slate-900 dark:text-white mb-3">Implicações para Programas PESA</h3>
-                  <ul className="space-y-2 text-sm text-slate-700 dark:text-slate-300">
+              <CardContent>
+                <ul className="space-y-2 text-sm text-slate-700 dark:text-slate-300">
                     <li className="flex gap-2">
                       <span className="text-orange-600 dark:text-orange-400 font-bold">✓</span>
                       <span><strong>Reforçar Pertencimento:</strong> Programas de mentoria e acolhida fortalecem motivação intrínseca (82% concordância em pertencimento)</span>
@@ -1925,8 +1817,7 @@ export default function Home() {
                       <span className="text-orange-600 dark:text-orange-400 font-bold">✓</span>
                       <span><strong>Desenvolvimento Integral:</strong> Equilibrar motivação intrínseca (autorrealização) e extrínseca (oportunidades) para permanência sustentável</span>
                     </li>
-                  </ul>
-                </div>
+                </ul>
               </CardContent>
             </Card>
           </div>
@@ -2066,6 +1957,84 @@ export default function Home() {
                   </BarChart>
                 </ResponsiveContainer>
                 <p className="text-sm text-slate-600 dark:text-slate-400 mt-6"><strong>Nota:</strong> Tamanho da amostra varia por curso (n=11 a n=524). Programas com amostras maiores (Odontologia, Eng. Software) oferecem maior confiabilidade estatística.</p>
+              </CardContent>
+            </Card>
+
+            {/* Motivação para Permanência */}
+            <Card className="border-0 shadow-lg bg-gradient-to-br from-orange-50 to-rose-50 dark:from-orange-900/20 dark:to-rose-900/20 mb-8">
+              <CardHeader>
+                <CardTitle className="text-2xl">Motivação para Permanência Estudantil</CardTitle>
+                <CardDescription>Análise dos fatores motivacionais que influenciam a decisão de continuar os estudos</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <div>
+                  <h3 className="font-semibold text-slate-900 dark:text-white mb-4">Fatores de Motivação para Permanência (Escala 1-5)</h3>
+                  <ResponsiveContainer width="100%" height={450}>
+                    <BarChart data={[
+                      { fator: "Projeto de Vida", media: 4.97 },
+                      { fator: "Vocação", media: 4.25 },
+                      { fator: "Qualidade do Curso", media: 4.24 },
+                      { fator: "Dedicação aos Estudos", media: 4.16 },
+                      { fator: "Melhorar Condições Econômicas", media: 4.15 },
+                      { fator: "Atuação do Professor", media: 4.13 },
+                      { fator: "Ambiente da Instituição", media: 4.12 },
+                      { fator: "Valorização Pessoal/Profissional", media: 4.12 },
+                      { fator: "Suporte Econômico", media: 4.1 },
+                      { fator: "Infraestrutura e Tecnologias", media: 4.05 },
+                      { fator: "Convivência com Colegas", media: 3.99 },
+                      { fator: "Conciliar Estudos e Trabalho", media: 3.84 },
+                      { fator: "Satisfação com Gestão IES", media: 3.83 }
+                    ]} layout="vertical">
+                      <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
+                      <XAxis type="number" domain={[0, 5]} />
+                      <YAxis dataKey="fator" type="category" width={200} />
+                      <Tooltip contentStyle={{ backgroundColor: "#1f2937", border: "1px solid #374151", borderRadius: "8px", color: "#f3f4f6" }} formatter={(value) => typeof value === 'number' ? value.toFixed(2) : value} />
+                      <Bar dataKey="media" fill="#f97316" name="Média" />
+                    </BarChart>
+                  </ResponsiveContainer>
+                  <p className="text-sm text-slate-600 dark:text-slate-400 mt-4"><strong>Nota:</strong> Escala de 1 a 5, onde 5 = máxima motivação. Projeto de Vida (4.97) é o principal motivador para permanência.</p>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Matriz de Correlação com Permanência */}
+            <Card className="border-0 shadow-lg bg-gradient-to-br from-indigo-50 to-blue-50 dark:from-indigo-900/20 dark:to-blue-900/20">
+              <CardHeader>
+                <CardTitle className="text-2xl">Matriz de Correlação com Permanência Estudantil</CardTitle>
+                <CardDescription>Correlação de Pearson entre fatores e o Fator de Permanência Estudantil (FEP) - Significância p &lt; 0,01</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <div>
+                  <ResponsiveContainer width="100%" height={350}>
+                    <BarChart data={[
+                      { fator: "Prática Docente", correlacao: 0.778, cor: "#4f46e5" },
+                      { fator: "Qualidade do Curso", correlacao: 0.574, cor: "#6366f1" },
+                      { fator: "Gestão Institucional", correlacao: 0.576, cor: "#818cf8" },
+                      { fator: "Dedicação do Estudante", correlacao: 0.332, cor: "#a5b4fc" }
+                    ]}>
+                      <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
+                      <XAxis dataKey="fator" />
+                      <YAxis domain={[0, 1]} label={{ value: "Correlação de Pearson (r)", angle: -90, position: "insideLeft" }} />
+                      <Tooltip contentStyle={{ backgroundColor: "#1f2937", border: "1px solid #374151", borderRadius: "8px", color: "#f3f4f6" }} formatter={(value) => typeof value === 'number' ? value.toFixed(3) : value} />
+                      <Bar dataKey="correlacao" fill="#4f46e5" name="Correlação" />
+                    </BarChart>
+                  </ResponsiveContainer>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="p-4 bg-white dark:bg-slate-800 rounded-lg">
+                    <p className="font-semibold text-slate-900 dark:text-white text-sm mb-2">Correlação Forte</p>
+                    <p className="text-xs text-slate-600 dark:text-slate-400"><strong>Prática Docente (r=0.778):</strong> Atuação do professor é o fator mais fortemente correlacionado com permanência estudantil</p>
+                  </div>
+                  <div className="p-4 bg-white dark:bg-slate-800 rounded-lg">
+                    <p className="font-semibold text-slate-900 dark:text-white text-sm mb-2">Correlação Moderada</p>
+                    <p className="text-xs text-slate-600 dark:text-slate-400"><strong>Qualidade do Curso (r=0.574) e Gestão Institucional (r=0.576):</strong> Fatores igualmente importantes para permanência</p>
+                  </div>
+                  <div className="p-4 bg-white dark:bg-slate-800 rounded-lg md:col-span-2">
+                    <p className="font-semibold text-slate-900 dark:text-white text-sm mb-2">Implicação Estratégica</p>
+                    <p className="text-xs text-slate-600 dark:text-slate-400">Os programas PESA devem priorizar: (1) Qualificação docente e prática pedagógica; (2) Melhoria contínua da gestão institucional; (3) Fortalecimento da qualidade dos cursos. A dedicação do estudante (r=0.332) é menos correlacionada, sugerindo que fatores institucionais têm maior impacto na permanência.</p>
+                  </div>
+                </div>
               </CardContent>
             </Card>
           </section>
