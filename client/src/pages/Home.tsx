@@ -3,7 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Slider } from "@/components/ui/slider";
 import { LineChart, Line, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, ComposedChart, Area, AreaChart, PieChart, Pie, Cell } from "recharts";
-import { TrendingUp, Users, Target, Zap, DollarSign, TrendingDown, Menu, X, BookOpen, Users2, BarChart3, LineChart as LineChartIcon } from "lucide-react";
+import { TrendingUp, Users, Target, Zap, DollarSign, TrendingDown, Menu, X, BookOpen, Users2, BarChart3, LineChart as LineChartIcon, Heart } from "lucide-react";
 
 // Dados de crescimento de participação
 const growthData = [
@@ -175,6 +175,7 @@ export default function Home() {
     { id: "financial", label: "Impacto Financeiro", icon: DollarSign },
     { id: "acompanhamento", label: "Acompanhamento", icon: BarChart3 },
     { id: "ciencia", label: "Análise Científica", icon: TrendingUp },
+    { id: "historias", label: "Histórias de Sucesso", icon: Heart },
   ];
 
   const externalDashboardUrl = "https://8501-iqvglsfjns0hq4qylz31d-ee061de5.us1.manus.computer/#dashboard-de-impacto-financeiro-do-pesa";
@@ -2038,6 +2039,96 @@ export default function Home() {
               </CardContent>
             </Card>
           </section>
+        )}
+
+        {/* Historias de Sucesso */}
+        {activeSection === "historias" && (
+          <main className="space-y-8">
+            <section className="space-y-6">
+              <div>
+                <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4 leading-tight" style={{textAlign: 'center', color: '#1557f5'}}>
+                  Historias de Sucesso
+                </h2>
+                <p className="text-lg text-slate-600 dark:text-slate-300 mb-6 text-center">
+                  Depoimentos de estudantes e mentores que se beneficiaram dos programas PESA
+                </p>
+              </div>
+
+              <Card className="border-0 shadow-lg">
+                <CardHeader>
+                  <CardTitle className="text-2xl flex items-center gap-2">
+                    <Heart className="w-6 h-6 text-red-500" />
+                    Depoimentos de Mentorados
+                  </CardTitle>
+                  <CardDescription>Experiencias de estudantes que receberam mentoria</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="p-6 bg-gradient-to-br from-orange-50 to-red-50 dark:from-orange-900/20 dark:to-red-900/20 rounded-lg border-l-4 border-orange-500">
+                      <p className="text-slate-700 dark:text-slate-300 italic mb-3">"Esse programa ajuda muito, principalmente quem esta comecando do zero. Desde ja eu agradeco."</p>
+                      <p className="text-sm text-slate-600 dark:text-slate-400 font-semibold">D.R. - Mentorada</p>
+                    </div>
+                    <div className="p-6 bg-gradient-to-br from-orange-50 to-red-50 dark:from-orange-900/20 dark:to-red-900/20 rounded-lg border-l-4 border-orange-500">
+                      <p className="text-slate-700 dark:text-slate-300 italic mb-3">"Foi incrivel o apoio que minha mentora me deu sempre"</p>
+                      <p className="text-sm text-slate-600 dark:text-slate-400 font-semibold">R. - Mentorada</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="border-0 shadow-lg">
+                <CardHeader>
+                  <CardTitle className="text-2xl flex items-center gap-2">
+                    <Heart className="w-6 h-6 text-blue-500" />
+                    Depoimentos de Mentores
+                  </CardTitle>
+                  <CardDescription>Experiencias de mentores que contribuem para o sucesso dos mentorados</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="p-6 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-lg border-l-4 border-blue-500">
+                      <p className="text-slate-700 dark:text-slate-300 italic mb-3">"E um excelente programa. Eu so tenho elogios a fazer. Agradeco a oportunidade de ter participado, foi uma honra e um orgulho enorme"</p>
+                      <p className="text-sm text-slate-600 dark:text-slate-400 font-semibold">Mentora</p>
+                    </div>
+                    <div className="p-6 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-lg border-l-4 border-blue-500">
+                      <p className="text-slate-700 dark:text-slate-300 italic mb-3">"Acredito muito em vcs e no Programa de Mentoria Universitaria, na necessidade dele."</p>
+                      <p className="text-sm text-slate-600 dark:text-slate-400 font-semibold">Mentor</p>
+                    </div>
+                    <div className="p-6 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-lg border-l-4 border-blue-500">
+                      <p className="text-slate-700 dark:text-slate-300 italic mb-3">"Amei fazer parte do programa"</p>
+                      <p className="text-sm text-slate-600 dark:text-slate-400 font-semibold">Mentor</p>
+                    </div>
+                    <div className="p-6 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-lg border-l-4 border-blue-500">
+                      <p className="text-slate-700 dark:text-slate-300 italic mb-3">"O projeto e incrivel, e amei contribuir para o crescimento do Programa de Mentoria."</p>
+                      <p className="text-sm text-slate-600 dark:text-slate-400 font-semibold">Mentor</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="border-0 shadow-lg bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20">
+                <CardHeader>
+                  <CardTitle className="text-2xl">Impacto do Programa de Mentoria 2024.2</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div className="text-center">
+                      <p className="text-4xl font-bold text-emerald-600 dark:text-emerald-400">29</p>
+                      <p className="text-sm text-slate-600 dark:text-slate-400 mt-2">Mentores Dedicados</p>
+                    </div>
+                    <div className="text-center">
+                      <p className="text-4xl font-bold text-teal-600 dark:text-teal-400">69</p>
+                      <p className="text-sm text-slate-600 dark:text-slate-400 mt-2">Mentorados Acompanhados</p>
+                    </div>
+                    <div className="text-center">
+                      <p className="text-4xl font-bold text-cyan-600 dark:text-cyan-400">100%</p>
+                      <p className="text-sm text-slate-600 dark:text-slate-400 mt-2">Satisfacao Relatada</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </section>
+          </main>
         )}
       </main>
 
