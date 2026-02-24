@@ -186,7 +186,7 @@ export default function Home() {
               <Zap className="w-6 h-6 text-white" />
             </div>
             <div>
-              <h1 className="text-xl font-bold text-slate-900 dark:text-white">PESA Growth</h1>
+              <h1 className="text-xl font-bold text-slate-900 dark:text-white">PESA - UCB</h1>
               <p className="text-xs text-slate-500 dark:text-slate-400">UCB Permanência Estudantil</p>
             </div>
           </div>
