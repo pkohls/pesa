@@ -176,6 +176,7 @@ export default function Home() {
     { id: "acompanhamento", label: "Acompanhamento", icon: BarChart3 },
     { id: "ciencia", label: "Análise Científica", icon: TrendingUp },
     { id: "historias", label: "Histórias de Sucesso", icon: Heart },
+    { id: "roadmap", label: "Roadmap 2026-2029", icon: Target },
   ];
 
   const externalDashboardUrl = "https://8501-iqvglsfjns0hq4qylz31d-ee061de5.us1.manus.computer/#dashboard-de-impacto-financeiro-do-pesa";
@@ -2123,6 +2124,165 @@ export default function Home() {
                     <div className="text-center">
                       <p className="text-4xl font-bold text-cyan-600 dark:text-cyan-400">100%</p>
                       <p className="text-sm text-slate-600 dark:text-slate-400 mt-2">Satisfacao Relatada</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </section>
+          </main>
+        )}
+
+        {/* Roadmap 2026-2029 */}
+        {activeSection === "roadmap" && (
+          <main className="space-y-8">
+            <section className="space-y-6">
+              <div>
+                <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4 leading-tight" style={{textAlign: 'center', color: '#1557f5'}}>
+                  Roadmap 2026-2029
+                </h2>
+                <p className="text-lg text-slate-600 dark:text-slate-300 mb-6 text-center">
+                  Marcos de expansao e consolidacao institucional do PESA
+                </p>
+              </div>
+
+              {/* Timeline */}
+              <Card className="border-0 shadow-lg">
+                <CardHeader>
+                  <CardTitle className="text-2xl">Jornada de Maturidade Institucional</CardTitle>
+                  <CardDescription>Fases de desenvolvimento do PESA como unidade de inteligencia academica</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-8">
+                    {/* 2026 - Consolidacao */}
+                    <div className="flex gap-6">
+                      <div className="flex flex-col items-center">
+                        <div className="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-lg">1</div>
+                        <div className="w-1 h-24 bg-blue-300 mt-2"></div>
+                      </div>
+                      <div className="pb-8">
+                        <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">2026: Consolidacao</h3>
+                        <p className="text-slate-600 dark:text-slate-400 mb-4">Estabelecimento de estrutura formal e consolidacao de programas existentes</p>
+                        <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+                          <li>✓ Formalizacao do PESA como unidade academica</li>
+                          <li>✓ Expansao do Programa de Mentoria para todos os cursos</li>
+                          <li>✓ Implementacao de sistema de monitoramento integrado</li>
+                          <li>✓ Certificacao de 100 mentores</li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    {/* 2027 - Expansao */}
+                    <div className="flex gap-6">
+                      <div className="flex flex-col items-center">
+                        <div className="w-12 h-12 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-lg">2</div>
+                        <div className="w-1 h-24 bg-emerald-300 mt-2"></div>
+                      </div>
+                      <div className="pb-8">
+                        <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">2027: Expansao</h3>
+                        <p className="text-slate-600 dark:text-slate-400 mb-4">Amplificacao de alcance e desenvolvimento de novas iniciativas</p>
+                        <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+                          <li>✓ Lancamento de programa de pares mentores</li>
+                          <li>✓ Desenvolvimento de plataforma digital de acompanhamento</li>
+                          <li>✓ Criacao de grupos de apoio tematicos</li>
+                          <li>✓ Participacao em 5 congressos internacionais</li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    {/* 2028 - Qualificacao */}
+                    <div className="flex gap-6">
+                      <div className="flex flex-col items-center">
+                        <div className="w-12 h-12 rounded-full bg-purple-600 text-white flex items-center justify-center font-bold text-lg">3</div>
+                        <div className="w-1 h-24 bg-purple-300 mt-2"></div>
+                      </div>
+                      <div className="pb-8">
+                        <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">2028: Qualificacao</h3>
+                        <p className="text-slate-600 dark:text-slate-400 mb-4">Aprofundamento de praticas e introducao de Learning Analytics</p>
+                        <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+                          <li>✓ Implementacao de Learning Analytics avancado</li>
+                          <li>✓ Publicacao de 3 artigos em periodicos internacionais</li>
+                          <li>✓ Desenvolvimento de modelo de intervencao personalizada</li>
+                          <li>✓ Certificacao de excelencia em permanencia estudantil</li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    {/* 2029 - Maturidade */}
+                    <div className="flex gap-6">
+                      <div className="flex flex-col items-center">
+                        <div className="w-12 h-12 rounded-full bg-cyan-600 text-white flex items-center justify-center font-bold text-lg">4</div>
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">2029: Maturidade Institucional</h3>
+                        <p className="text-slate-600 dark:text-slate-400 mb-4">Consolidacao como centro de referencia em permanencia estudantil</p>
+                        <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+                          <li>✓ Reconhecimento como centro de excelencia regional</li>
+                          <li>✓ Modelo replicavel para outras instituicoes</li>
+                          <li>✓ Taxa de permanencia acima de 90%</li>
+                          <li>✓ Rede de colaboracao com 20 instituicoes nacionais</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Indicadores de Progresso */}
+              <Card className="border-0 shadow-lg bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20">
+                <CardHeader>
+                  <CardTitle className="text-2xl">Indicadores de Progresso</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="p-4 bg-white dark:bg-slate-800 rounded-lg">
+                      <p className="font-semibold text-slate-900 dark:text-white mb-3">Cobertura de Programas</p>
+                      <div className="space-y-3">
+                        <div>
+                          <div className="flex justify-between text-sm mb-1">
+                            <span>2026</span>
+                            <span className="font-bold">100%</span>
+                          </div>
+                          <div className="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-2">
+                            <div className="bg-blue-600 h-2 rounded-full" style={{width: '100%'}}></div>
+                          </div>
+                        </div>
+                        <div>
+                          <div className="flex justify-between text-sm mb-1">
+                            <span>2027</span>
+                            <span className="font-bold">150%</span>
+                          </div>
+                          <div className="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-2">
+                            <div className="bg-emerald-600 h-2 rounded-full" style={{width: '100%'}}></div>
+                          </div>
+                        </div>
+                        <div>
+                          <div className="flex justify-between text-sm mb-1">
+                            <span>2028</span>
+                            <span className="font-bold">200%</span>
+                          </div>
+                          <div className="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-2">
+                            <div className="bg-purple-600 h-2 rounded-full" style={{width: '100%'}}></div>
+                          </div>
+                        </div>
+                        <div>
+                          <div className="flex justify-between text-sm mb-1">
+                            <span>2029</span>
+                            <span className="font-bold">250%</span>
+                          </div>
+                          <div className="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-2">
+                            <div className="bg-cyan-600 h-2 rounded-full" style={{width: '100%'}}></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="p-4 bg-white dark:bg-slate-800 rounded-lg">
+                      <p className="font-semibold text-slate-900 dark:text-white mb-3">Metas Estrategicas</p>
+                      <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+                        <li>✓ <strong>Mentores:</strong> 7 (2023) → 150 (2029)</li>
+                        <li>✓ <strong>Mentorados:</strong> 14 (2023) → 1.500 (2029)</li>
+                        <li>✓ <strong>Publicacoes:</strong> 0 (2025) → 10 (2029)</li>
+                        <li>✓ <strong>Permanencia:</strong> 85% (2025) → 92% (2029)</li>
+                      </ul>
                     </div>
                   </div>
                 </CardContent>
