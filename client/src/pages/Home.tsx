@@ -173,7 +173,7 @@ export default function Home() {
     { id: "stay360", label: "Stay360", icon: BookOpen },
     { id: "research", label: "Pesquisa", icon: BarChart3 },
     { id: "financial", label: "Impacto Financeiro", icon: DollarSign },
-    { id: "acompanhamento", label: "Acompanhamento", icon: LineChart },
+    { id: "acompanhamento", label: "Acompanhamento", icon: BarChart3 },
   ];
 
   const externalDashboardUrl = "https://8501-iqvglsfjns0hq4qylz31d-ee061de5.us1.manus.computer/#dashboard-de-impacto-financeiro-do-pesa";
