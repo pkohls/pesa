@@ -1681,106 +1681,102 @@ export default function Home() {
               </CardContent>
             </Card>
 
-            {/* Gráficos de Correlação */}
+            {/* Gráficos de Evolução de Programas */}
             <Card className="border-0 shadow-lg">
               <CardHeader>
-                <CardTitle className="text-2xl">Correlação: Participação vs Retenção</CardTitle>
-                <CardDescription>Relação entre participação em programas PESA e taxa de retenção estudantil</CardDescription>
+                <CardTitle className="text-2xl">Evolução dos Programas PESA</CardTitle>
+                <CardDescription>Crescimento e desenvolvimento dos principais programas de permanência estudantil</CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="space-y-8">
-                  {/* Gráfico 1: Mentoria vs Retenção */}
+                  {/* Gráfico 1: Evolução da Mentoria */}
                   <div>
-                    <h3 className="font-semibold text-slate-900 dark:text-white mb-4">Programa de Mentoria - Impacto na Retenção</h3>
+                    <h3 className="font-semibold text-slate-900 dark:text-white mb-4">Programa de Mentoria Universitária - Evolução Histórica</h3>
                     <ResponsiveContainer width="100%" height={300}>
                       <ComposedChart data={[
-                        { periodo: "2023/2", mentores: 7, mentorados: 14, retencao: 82 },
-                        { periodo: "2024/1", mentores: 16, mentorados: 38, retencao: 87 },
-                        { periodo: "2024/2", mentores: 29, mentorados: 109, retencao: 91 },
-                        { periodo: "2025/1", mentores: 9, mentorados: 21, retencao: 85 }
+                        { periodo: "2023/2", mentores: 7, mentorados: 14 },
+                        { periodo: "2024/1", mentores: 16, mentorados: 38 },
+                        { periodo: "2024/2", mentores: 29, mentorados: 109 },
+                        { periodo: "2025/1", mentores: 9, mentorados: 21 }
                       ]}>
                         <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
                         <XAxis dataKey="periodo" />
-                        <YAxis yAxisId="left" label={{ value: "Mentorados", angle: -90, position: "insideLeft" }} />
-                        <YAxis yAxisId="right" orientation="right" label={{ value: "Taxa de Retenção (%)", angle: 90, position: "insideRight" }} />
+                        <YAxis yAxisId="left" label={{ value: "Mentores", angle: -90, position: "insideLeft" }} />
+                        <YAxis yAxisId="right" orientation="right" label={{ value: "Mentorados", angle: 90, position: "insideRight" }} />
                         <Tooltip contentStyle={{ backgroundColor: "#1f2937", border: "1px solid #374151", borderRadius: "8px", color: "#f3f4f6" }} />
                         <Legend />
-                        <Bar yAxisId="left" dataKey="mentorados" fill="#3b82f6" name="Estudantes em Mentoria" />
-                        <Line yAxisId="right" type="monotone" dataKey="retencao" stroke="#10b981" strokeWidth={3} name="Taxa de Retenção (%)" />
+                        <Bar yAxisId="left" dataKey="mentores" fill="#3b82f6" name="Mentores" />
+                        <Line yAxisId="right" type="monotone" dataKey="mentorados" stroke="#10b981" strokeWidth={3} name="Estudantes em Mentoria" />
                       </ComposedChart>
                     </ResponsiveContainer>
-                    <p className="text-sm text-slate-600 dark:text-slate-400 mt-4"><strong>Insight:</strong> Aumento de 78% em mentorados (2023/2 a 2024/2) correlacionado com aumento de 11% na taxa de retenção, demonstrando impacto positivo do programa.</p>
+                    <p className="text-sm text-slate-600 dark:text-slate-400 mt-4"><strong>Insight:</strong> Crescimento de 314% em mentorados (2023/2 a 2024/2), demonstrando expansão significativa do programa. Pico de 29 mentores em 2024/2 com 109 mentorados.</p>
                   </div>
 
-                  {/* Gráfico 2: Acolhida Acadêmica vs Retenção */}
+                  {/* Gráfico 2: Acolhida Acadêmica de Bolsistas */}
                   <div>
-                    <h3 className="font-semibold text-slate-900 dark:text-white mb-4">Acolhida Acadêmica de Bolsistas - Impacto na Retenção</h3>
+                    <h3 className="font-semibold text-slate-900 dark:text-white mb-4">Acolhida Acadêmica de Bolsistas - Evolução 2024-2025</h3>
                     <ResponsiveContainer width="100%" height={300}>
-                      <ComposedChart data={[
-                        { periodo: "2024", acolhidos: 133, retencao: 84 },
-                        { periodo: "2025/1", acolhidos: 59, retencao: 80 },
-                        { periodo: "2025/2", acolhidos: 100, retencao: 88 }
+                      <BarChart data={[
+                        { periodo: "2024", acolhidos: 133 },
+                        { periodo: "2025/1", acolhidos: 59 },
+                        { periodo: "2025/2", acolhidos: 100 }
                       ]}>
                         <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
                         <XAxis dataKey="periodo" />
-                        <YAxis yAxisId="left" label={{ value: "Estudantes Acolhidos", angle: -90, position: "insideLeft" }} />
-                        <YAxis yAxisId="right" orientation="right" label={{ value: "Taxa de Retenção (%)", angle: 90, position: "insideRight" }} />
+                        <YAxis label={{ value: "Estudantes Acolhidos", angle: -90, position: "insideLeft" }} />
                         <Tooltip contentStyle={{ backgroundColor: "#1f2937", border: "1px solid #374151", borderRadius: "8px", color: "#f3f4f6" }} />
                         <Legend />
-                        <Bar yAxisId="left" dataKey="acolhidos" fill="#a855f7" name="Estudantes Acolhidos" />
-                        <Line yAxisId="right" type="monotone" dataKey="retencao" stroke="#f59e0b" strokeWidth={3} name="Taxa de Retenção (%)" />
-                      </ComposedChart>
+                        <Bar dataKey="acolhidos" fill="#a855f7" name="Estudantes Acolhidos" />
+                      </BarChart>
                     </ResponsiveContainer>
-                    <p className="text-sm text-slate-600 dark:text-slate-400 mt-4"><strong>Insight:</strong> Recuperação de 69% em acolhidos (2025/1 a 2025/2) associada com aumento de 10% na retenção, indicando efetividade do programa de acolhimento.</p>
+                    <p className="text-sm text-slate-600 dark:text-slate-400 mt-4"><strong>Insight:</strong> Redução de 55% em 2025/1 (59 estudantes), seguida de recuperação de 69% em 2025/2 (100 estudantes), indicando ajuste estratégico e reativação do programa.</p>
                   </div>
 
-                  {/* Gráfico 3: Participação Geral vs Retenção */}
+                  {/* Gráfico 3: Participação Total em Programas */}
                   <div>
-                    <h3 className="font-semibold text-slate-900 dark:text-white mb-4">Participação Total em Programas PESA vs Taxa de Retenção</h3>
+                    <h3 className="font-semibold text-slate-900 dark:text-white mb-4">Participação Total em Programas PESA - Crescimento Acumulado</h3>
                     <ResponsiveContainer width="100%" height={300}>
                       <AreaChart data={[
-                        { periodo: "2023/2", participacao: 14, retencao: 82 },
-                        { periodo: "2024/1", participacao: 38, retencao: 85 },
-                        { periodo: "2024/2", participacao: 292, retencao: 89 },
-                        { periodo: "2025/1", participacao: 80, retencao: 86 },
-                        { periodo: "2025/2", participacao: 1369, retencao: 92 }
+                        { periodo: "2023/2", participacao: 14 },
+                        { periodo: "2024/1", participacao: 38 },
+                        { periodo: "2024/2", participacao: 292 },
+                        { periodo: "2025/1", participacao: 80 },
+                        { periodo: "2025/2", participacao: 1369 }
                       ]}>
                         <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
                         <XAxis dataKey="periodo" />
-                        <YAxis yAxisId="left" label={{ value: "Participantes", angle: -90, position: "insideLeft" }} />
-                        <YAxis yAxisId="right" orientation="right" label={{ value: "Taxa de Retenção (%)", angle: 90, position: "insideRight" }} />
+                        <YAxis label={{ value: "Total de Participantes", angle: -90, position: "insideLeft" }} />
                         <Tooltip contentStyle={{ backgroundColor: "#1f2937", border: "1px solid #374151", borderRadius: "8px", color: "#f3f4f6" }} />
                         <Legend />
-                        <Area yAxisId="left" type="monotone" dataKey="participacao" fill="#3b82f6" stroke="#1e40af" name="Total de Participantes" />
-                        <Line yAxisId="right" type="monotone" dataKey="retencao" stroke="#ef4444" strokeWidth={3} name="Taxa de Retenção (%)" />
+                        <Area type="monotone" dataKey="participacao" fill="#3b82f6" stroke="#1e40af" name="Total de Participantes" />
                       </AreaChart>
                     </ResponsiveContainer>
-                    <p className="text-sm text-slate-600 dark:text-slate-400 mt-4"><strong>Insight:</strong> Crescimento de 9.671% em participação (2023/2 a 2025/2) correlacionado com aumento de 12% na taxa de retenção, validando a estratégia de expansão do PESA.</p>
+                    <p className="text-sm text-slate-600 dark:text-slate-400 mt-4"><strong>Insight:</strong> Crescimento extraordinário de 9.671% em participação (2023/2 a 2025/2), passando de 14 para 1.369 participantes. Expansão massiva em 2025/2 com 1.369 participantes, validando a estratégia de escala do PESA.</p>
                   </div>
 
-                  {/* Resumo de Correlações */}
+                  {/* Resumo de Crescimento */}
                   <div className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 p-6 rounded-lg">
-                    <h3 className="font-semibold text-slate-900 dark:text-white mb-4">Resumo de Correlações Identificadas</h3>
+                    <h3 className="font-semibold text-slate-900 dark:text-white mb-4">Resumo de Crescimento por Programa</h3>
                     <div className="space-y-3 text-sm">
                       <div className="flex items-start gap-3">
-                        <span className="text-blue-600 dark:text-blue-400 font-bold">✓</span>
+                        <span className="text-blue-600 dark:text-blue-400 font-bold">📈</span>
                         <div>
                           <p className="font-semibold text-slate-900 dark:text-white">Mentoria Universitária</p>
-                          <p className="text-slate-600 dark:text-slate-400">Correlação positiva forte: cada 10 mentorados adicionais associados a ~1,4% de aumento na retenção</p>
+                          <p className="text-slate-600 dark:text-slate-400">Crescimento de 314% em mentorados (2023/2 a 2024/2). Programa consolidado com média de 45 mentorados por período.</p>
                         </div>
                       </div>
                       <div className="flex items-start gap-3">
-                        <span className="text-emerald-600 dark:text-emerald-400 font-bold">✓</span>
+                        <span className="text-emerald-600 dark:text-emerald-400 font-bold">📈</span>
                         <div>
-                          <p className="font-semibold text-slate-900 dark:text-white">Acolhida Acadêmica</p>
-                          <p className="text-slate-600 dark:text-slate-400">Correlação positiva moderada: programa essencial para retenção de bolsistas, com impacto de ~0,8% por 10 estudantes</p>
+                          <p className="font-semibold text-slate-900 dark:text-white">Acolhida Acadêmica de Bolsistas</p>
+                          <p className="text-slate-600 dark:text-slate-400">Média de 97 estudantes acolhidos (2024-2025/2). Programa essencial para suporte a bolsistas, com recuperação de 69% em 2025/2.</p>
                         </div>
                       </div>
                       <div className="flex items-start gap-3">
-                        <span className="text-amber-600 dark:text-amber-400 font-bold">✓</span>
+                        <span className="text-amber-600 dark:text-amber-400 font-bold">📈</span>
                         <div>
                           <p className="font-semibold text-slate-900 dark:text-white">Participação Geral</p>
-                          <p className="text-slate-600 dark:text-slate-400">Correlação positiva muito forte: cada 100 participantes adicionais associados a ~0,12% de aumento na retenção institucional</p>
+                          <p className="text-slate-600 dark:text-slate-400">Crescimento exponencial de 9.671% (2023/2 a 2025/2). Expansão massiva em 2025/2 demonstra institucionalização e escala dos programas PESA.</p>
                         </div>
                       </div>
                     </div>
