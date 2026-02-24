@@ -41,9 +41,12 @@ const financialScenarios = [
   },
 ];
 
-// Dados de Programa de Mentoria
+// Dados de Programa de Mentoria (histórico completo)
 const mentorshipData = [
-  { semester: "1º/2025", mentors: 9, mentees: 25, totalParticipants: 34 },
+  { semester: "2º/2023", mentors: 7, mentees: 14, totalParticipants: 21 },
+  { semester: "1º/2024", mentors: 16, mentees: 38, totalParticipants: 54 },
+  { semester: "2º/2024", mentors: 29, mentees: 109, totalParticipants: 138 },
+  { semester: "1º/2025", mentors: 9, mentees: 21, totalParticipants: 30 },
   { semester: "2º/2025", mentors: 15, mentees: 45, totalParticipants: 60 },
 ];
 
@@ -51,6 +54,13 @@ const mentorshipData = [
 const stay360Data = [
   { semester: "1º/2025", professors: 16, sessions: 1, focus: "Acolhida e Permanência" },
   { semester: "2º/2025", professors: 23, sessions: 2, focus: "Acolhida Acadêmica Expandida" },
+];
+
+// Dados de Acolhida Acadêmica de Bolsistas
+const welcomeScholarshipData = [
+  { year: "2024", students: 133 },
+  { year: "2025/1", students: 59 },
+  { year: "2025/2", students: 100 },
 ];
 
 // Dados de Pesquisa
@@ -158,10 +168,13 @@ export default function Home() {
   const menuItems = [
     { id: "overview", label: "Visão Geral", icon: Zap },
     { id: "mentorship", label: "Programa de Mentoria", icon: Users2 },
+    { id: "acolhida", label: "Acolhida Acadêmica", icon: Users },
     { id: "stay360", label: "Stay360", icon: BookOpen },
     { id: "research", label: "Pesquisa", icon: BarChart3 },
     { id: "financial", label: "Impacto Financeiro", icon: DollarSign },
   ];
+
+  const externalDashboardUrl = "https://8501-iqvglsfjns0hq4qylz31d-ee061de5.us1.manus.computer/#dashboard-de-impacto-financeiro-do-pesa";
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 dark:from-slate-950 dark:via-blue-950 dark:to-slate-900">
@@ -194,6 +207,15 @@ export default function Home() {
                 {item.label}
               </button>
             ))}
+            <a
+              href={externalDashboardUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 py-2 rounded-lg font-semibold transition-all flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-600 text-white hover:shadow-lg"
+            >
+              <BarChart3 className="w-4 h-4" />
+              Dashboard Financeiro
+            </a>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -225,6 +247,15 @@ export default function Home() {
                 {item.label}
               </button>
             ))}
+            <a
+              href={externalDashboardUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full px-4 py-2 rounded-lg font-semibold transition-all flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-600 text-white hover:shadow-lg"
+            >
+              <BarChart3 className="w-4 h-4" />
+              Dashboard Financeiro
+            </a>
           </div>
         )}
       </header>
@@ -636,7 +667,7 @@ export default function Home() {
             <Card className="border-0 shadow-lg">
               <CardHeader>
                 <CardTitle>Evolução do Programa de Mentoria</CardTitle>
-                <CardDescription>Crescimento de mentores e mentorados ao longo de 2025</CardDescription>
+                <CardDescription>Evolução histórica do Programa de Mentoria (2023-2025)</CardDescription>
               </CardHeader>
               <CardContent>
                 <ResponsiveContainer width="100%" height={300}>
@@ -688,6 +719,122 @@ export default function Home() {
                       <li>• Pró-Reitoria de Identidade e Missão</li>
                       <li>• Coordenação de Graduação</li>
                       <li>• Mentores e Mentorados</li>
+                    </ul>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        )}
+
+
+        {/* Acolhida Acadêmica de Bolsistas Section */}
+        {activeSection === "acolhida" && (
+          <div className="space-y-6">
+            <div>
+              <h2 className="text-4xl font-bold text-slate-900 dark:text-white mb-4">Acolhida Acadêmica de Bolsistas</h2>
+              <p className="text-lg text-slate-600 dark:text-slate-300">Programa de integração e acolhimento de estudantes bolsistas na comunidade universitária.</p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <Card className="border-0 shadow-lg">
+                <CardHeader className="pb-3">
+                  <CardTitle className="text-sm font-semibold text-slate-600 dark:text-slate-400">2024</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="text-3xl font-bold text-blue-600 dark:text-blue-400">133</div>
+                  <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">Estudantes acolhidos</p>
+                </CardContent>
+              </Card>
+
+              <Card className="border-0 shadow-lg">
+                <CardHeader className="pb-3">
+                  <CardTitle className="text-sm font-semibold text-slate-600 dark:text-slate-400">2025/1</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="text-3xl font-bold text-purple-600 dark:text-purple-400">59</div>
+                  <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">Estudantes acolhidos</p>
+                </CardContent>
+              </Card>
+
+              <Card className="border-0 shadow-lg">
+                <CardHeader className="pb-3">
+                  <CardTitle className="text-sm font-semibold text-slate-600 dark:text-slate-400">2025/2</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="text-3xl font-bold text-emerald-600 dark:text-emerald-400">100</div>
+                  <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">Estudantes acolhidos</p>
+                </CardContent>
+              </Card>
+            </div>
+
+            <Card className="border-0 shadow-lg">
+              <CardHeader>
+                <CardTitle>Evolução da Acolhida Acadêmica</CardTitle>
+                <CardDescription>Participação de bolsistas ao longo do período</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ResponsiveContainer width="100%" height={300}>
+                  <BarChart data={welcomeScholarshipData}>
+                    <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
+                    <XAxis dataKey="year" />
+                    <YAxis />
+                    <Tooltip
+                      contentStyle={{
+                        backgroundColor: "#1f2937",
+                        border: "1px solid #374151",
+                        borderRadius: "8px",
+                        color: "#f3f4f6"
+                      }}
+                    />
+                    <Legend />
+                    <Bar dataKey="students" fill="#3b82f6" name="Estudantes Acolhidos" />
+                  </BarChart>
+                </ResponsiveContainer>
+              </CardContent>
+            </Card>
+
+            <Card className="border-0 shadow-lg bg-gradient-to-br from-teal-50 to-teal-100 dark:from-teal-900/20 dark:to-teal-800/20">
+              <CardHeader>
+                <CardTitle>Objetivos da Acolhida</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <p className="text-slate-700 dark:text-slate-300">
+                  A Acolhida Acadêmica de Bolsistas é um programa estruturado para integrar estudantes bolsistas à comunidade universitária, facilitando sua adaptação ao ambiente acadêmico e promovendo sentimento de pertencimento.
+                </p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <p className="font-semibold text-slate-900 dark:text-white mb-2">Atividades Realizadas</p>
+                    <ul className="text-sm text-slate-600 dark:text-slate-400 space-y-2">
+                      <li className="flex items-start gap-2">
+                        <span className="text-teal-600 dark:text-teal-400 mt-1">•</span>
+                        <span>Apresentação de setores e serviços universitários</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-teal-600 dark:text-teal-400 mt-1">•</span>
+                        <span>Explicação sobre plano de ensino e estratégias avaliativas</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-teal-600 dark:text-teal-400 mt-1">•</span>
+                        <span>Apresentação da estrutura física da universidade</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div>
+                    <p className="font-semibold text-slate-900 dark:text-white mb-2">Impacto Esperado</p>
+                    <ul className="text-sm text-slate-600 dark:text-slate-400 space-y-2">
+                      <li className="flex items-start gap-2">
+                        <span className="text-teal-600 dark:text-teal-400 mt-1">•</span>
+                        <span>Redução de evasão entre bolsistas</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-teal-600 dark:text-teal-400 mt-1">•</span>
+                        <span>Maior engajamento com a instituição</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-teal-600 dark:text-teal-400 mt-1">•</span>
+                        <span>Melhor aproveitamento acadêmico</span>
+                      </li>
                     </ul>
                   </div>
                 </div>
@@ -1047,7 +1194,7 @@ export default function Home() {
             </div>
             <div className="text-center">
               <p className="text-4xl font-bold text-emerald-600 dark:text-emerald-400">60</p>
-              <p className="text-sm text-slate-600 dark:text-slate-400 mt-2">Mentorados Ativos</p>
+              <p className="text-sm text-slate-600 dark:text-slate-400 mt-2">Estudantes Mentoria</p>
             </div>
             <div className="text-center">
               <p className="text-4xl font-bold text-pink-600 dark:text-pink-400">100%</p>
