@@ -166,8 +166,8 @@ export default function Home() {
   });
 
   const menuItems = [
-    { id: "overview", label: "Visão Geral", icon: Zap },
-    { id: "estudante", label: "Ser Estudante Universitário", icon: BookOpen },
+    { id: "estudante", label: "Visão Geral", icon: Zap },
+    { id: "overview", label: "Ser Estudante Universitário", icon: BookOpen },
     { id: "mentorship", label: "Programa de Mentoria", icon: Users2 },
     { id: "acolhida", label: "Acolhida Acadêmica", icon: Users },
     { id: "stay360", label: "Stay360", icon: BookOpen },
@@ -263,7 +263,7 @@ export default function Home() {
 
       <main className="container py-12">
         {/* Overview Section */}
-        {activeSection === "overview" && (
+        {activeSection === "estudante" && (
           <>
             {/* Hero Section */}
             <section className="mb-16">
@@ -626,7 +626,7 @@ export default function Home() {
         )}
 
         {/* Ser Estudante Universitário Section */}
-        {activeSection === "estudante" && (
+        {activeSection === "overview" && (
           <div className="space-y-6">
             <div>
               <h2 className="text-4xl font-bold text-slate-900 dark:text-white mb-4">Ser Estudante Universitário</h2>
