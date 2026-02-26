@@ -187,7 +187,7 @@ export default function Home() {
       <div className="bg-gradient-to-r from-blue-600 to-blue-700 text-white py-4 border-b border-blue-800">
         <div className="container text-center">
           <h1 className="text-2xl md:text-3xl font-bold">PESA - UCB</h1>
-          <p className="text-sm md:text-base text-blue-100 mt-1">Permanencia Estudantil e Sucesso Academico</p>
+          <p className="text-sm md:text-base text-blue-100 mt-1">Permanência Estudantil e Sucesso Acadêmico</p>
         </div>
       </div>
 
