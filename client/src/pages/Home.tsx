@@ -2430,6 +2430,32 @@ export default function Home() {
                   </div>
                 </div>
 
+                {/* Publicação Científica */}
+                <div className="border-l-4 border-purple-600 pl-4 mt-8">
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">Publicação Científica</h3>
+                  <div className="bg-white dark:bg-slate-800 p-4 rounded-lg border border-purple-200 dark:border-purple-900/30">
+                    <p className="font-semibold text-slate-900 dark:text-white mb-3">
+                      A Mentoria Universitária: Perspectivas Teóricas e Práticas para Promover o Engagement e a Permanência Estudantil
+                    </p>
+                    <div className="space-y-2 text-sm text-slate-600 dark:text-slate-400 mb-3">
+                      <p><strong>Autores:</strong></p>
+                      <ul className="space-y-1 ml-4">
+                        <li>• Pricila Kohls-Santos</li>
+                        <li>• Valdivina Alves Ferreira</li>
+                        <li>• Beatriz Brandão de Araújo Novaes</li>
+                      </ul>
+                    </div>
+                    <p className="text-sm text-slate-600 dark:text-slate-400 mb-3">
+                      Artigo científico que apresenta a experiência da Universidade Católica de Brasília (UCB) em mentoria universitária, fundamentado no modelo MIPESA (Modelo Integracionista para a Permanência Estudantil e Sucesso Acadêmico). O trabalho discute perspectivas teóricas e práticas para promover o engagement e a permanência estudantil através de programas estruturados de mentoria.
+                    </p>
+                    <div className="bg-purple-50 dark:bg-purple-900/10 p-3 rounded border border-purple-200 dark:border-purple-900/30">
+                      <p className="text-xs text-slate-600 dark:text-slate-400">
+                        <strong>Contribuições:</strong> Disseminação de conhecimento científico sobre mentoria universitária; Validação empírica do modelo MIPESA; Compartilhamento de boas práticas do PESA com comunidade acadêmica internacional.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
                 {/* Impacto */}
                 <div className="bg-gradient-to-r from-blue-100 to-emerald-100 dark:from-blue-900/20 dark:to-emerald-900/20 p-4 rounded-lg border border-blue-200 dark:border-blue-900/30">
                   <p className="font-semibold text-slate-900 dark:text-white mb-2">Impacto e Relevância</p>
