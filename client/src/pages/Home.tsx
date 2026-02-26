@@ -1035,6 +1035,17 @@ export default function Home() {
                       <p className="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
                         O PESA utiliza <strong>pesquisa científica como base para proposições, políticas e ações</strong>, garantindo que todas as iniciativas sejam fundamentadas em evidências empíricas e análise rigorosa.
                       </p>
+                      
+                      <div className="bg-white dark:bg-slate-800 p-4 rounded-lg border border-emerald-100 dark:border-emerald-900/30">
+                        <p className="font-semibold text-slate-900 dark:text-white mb-3">Modelo Teórico: MIPESA</p>
+                        <p className="text-sm text-slate-600 dark:text-slate-400 mb-3">
+                          O PESA nasce do <strong>MIPESA</strong> (Modelo Integracionista para a Permanência Estudantil e Sucesso Acadêmico), modelo de autoria de <strong>Pricila Kohls-Santos</strong>, coordenadora do setor e pesquisadora com publicações relevantes sobre permanência estudantil.
+                        </p>
+                        <p className="text-xs text-slate-500 dark:text-slate-400 italic">
+                          A coordenadora é pesquisadora ativa na área, com contribuições científicas que fundamentam todas as políticas e ações do PESA.
+                        </p>
+                      </div>
+                      
                       <div className="bg-white dark:bg-slate-800 p-4 rounded-lg border border-emerald-100 dark:border-emerald-900/30">
                         <p className="font-semibold text-slate-900 dark:text-white mb-2">Fundamentos Científicos:</p>
                         <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-400">
