@@ -2399,7 +2399,7 @@ export default function Home() {
                       "Acompañamiento estudiantil y interculturalidad: acciones para la permanencia estudiantil"
                     </p>
                     <p className="text-sm text-slate-600 dark:text-slate-400">
-                      Apresentação das estratégias e práticas do PESA para acompanhamento estudiantil com foco em interculturalidade e permanência.
+                      As professoras <strong>Pricila Kohls-Santos</strong> e <strong>Beatriz Brandão</strong> realizaram a apresentação das estratégias e práticas do PESA para acompanhamento estudiantil com foco em interculturalidade e permanência.
                     </p>
                   </div>
                 </div>
@@ -2416,7 +2416,7 @@ export default function Home() {
                         ✓ Painelista na Conferência de Abertura
                       </p>
                       <p className="text-sm text-slate-600 dark:text-slate-400">
-                        Participação como painelista na conferência de abertura do CLABES 2025, discutindo tendências e desafios em permanência estudantil na América Latina.
+                        <strong>Profª. Pricila Kohls-Santos</strong> participou como painelista na abertura do CLABES 2025, discutindo tendências e desafios em permanência estudantil na América Latina.
                       </p>
                     </div>
                     <div className="bg-white dark:bg-slate-800 p-4 rounded-lg border border-emerald-200 dark:border-emerald-900/30">
@@ -2424,7 +2424,7 @@ export default function Home() {
                         ✓ Ministrante de Oficina
                       </p>
                       <p className="text-sm text-slate-600 dark:text-slate-400">
-                        Oficina: <strong>"Cultura institucional de permanência"</strong> - Apresentação do modelo MIPESA e das políticas estruturantes do PESA como exemplo de cultura institucional voltada para permanência estudantil.
+                        As professoras <strong>Pricila Kohls-Santos</strong> e <strong>Camilla Cunha</strong> (Coordenadora Geral de Graduação) ministraram a Oficina: <strong>"Cultura institucional de permanência"</strong> - Apresentação do modelo MIPESA e das políticas estruturantes do PESA como exemplo de cultura institucional voltada para permanência estudantil e também prospecção de diferentes perspectivas e ações para implementação do MIPESA.
                       </p>
                     </div>
                   </div>
