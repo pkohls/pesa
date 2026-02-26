@@ -2223,7 +2223,7 @@ export default function Home() {
                   Roadmap 2026-2029
                 </h2>
                 <p className="text-lg text-slate-600 dark:text-slate-300 mb-6 text-center">
-                  Marcos de expansao e consolidacao institucional do PESA
+                  Marcos de expansão e consolidação institucional do PESA
                 </p>
               </div>
 
@@ -2231,7 +2231,7 @@ export default function Home() {
               <Card className="border-0 shadow-lg">
                 <CardHeader>
                   <CardTitle className="text-2xl">Jornada de Maturidade Institucional</CardTitle>
-                  <CardDescription>Fases de desenvolvimento do PESA como unidade de inteligencia academica</CardDescription>
+                  <CardDescription>Fases de desenvolvimento do PESA como unidade de inteligência acadêmica</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-8">
@@ -2242,13 +2242,13 @@ export default function Home() {
                         <div className="w-1 h-24 bg-blue-300 mt-2"></div>
                       </div>
                       <div className="pb-8">
-                        <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">2026: Consolidacao</h3>
-                        <p className="text-slate-600 dark:text-slate-400 mb-4">Estabelecimento de estrutura formal e consolidacao de programas existentes</p>
+                        <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4">2026: Consolidação</h3>
+                        <p className="text-slate-600 dark:text-slate-400 mb-4">Estabelecimento de estrutura formal e consolidação de programas existentes</p>
                         <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-400">
-                          <li>✓ Formalizacao do PESA como unidade academica</li>
-                          <li>✓ Expansao do Programa de Mentoria para todos os cursos</li>
-                          <li>✓ Implementacao de sistema de monitoramento integrado</li>
-                          <li>✓ Certificacao de 100 mentores</li>
+                          <li>✓ Formalização do PESA como unidade acadêmica</li>
+                          <li>✓ Expansão do Programa de Mentoria para todos os cursos</li>
+                          <li>✓ Implementação de sistema de monitoramento integrado</li>
+                          <li>✓ Certificação de 100 mentores</li>
                         </ul>
                       </div>
                     </div>
@@ -2260,13 +2260,13 @@ export default function Home() {
                         <div className="w-1 h-24 bg-emerald-300 mt-2"></div>
                       </div>
                       <div className="pb-8">
-                        <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">2027: Expansao</h3>
+                        <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4">2027: Expansão</h3>
                         <p className="text-slate-600 dark:text-slate-400 mb-4">Amplificacao de alcance e desenvolvimento de novas iniciativas</p>
                         <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-400">
-                          <li>✓ Lancamento de programa de pares mentores</li>
+                          <li>✓ Lançamento de programa de pares mentores acadêmicos</li>
                           <li>✓ Desenvolvimento de plataforma digital de acompanhamento</li>
-                          <li>✓ Criacao de grupos de apoio tematicos</li>
-                          <li>✓ Participacao em 5 congressos internacionais</li>
+                          <li>✓ Criação de grupos de apoio temáticos</li>
+                          <li>✓ Participação em 5 congressos internacionais</li>
                         </ul>
                       </div>
                     </div>
@@ -2278,13 +2278,13 @@ export default function Home() {
                         <div className="w-1 h-24 bg-purple-300 mt-2"></div>
                       </div>
                       <div className="pb-8">
-                        <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">2028: Qualificacao</h3>
-                        <p className="text-slate-600 dark:text-slate-400 mb-4">Aprofundamento de praticas e introducao de Learning Analytics</p>
+                        <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4">2028: Qualificação</h3>
+                        <p className="text-slate-600 dark:text-slate-400 mb-4">Aprofundamento de práticas e introdução de Learning Analytics</p>
                         <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-400">
-                          <li>✓ Implementacao de Learning Analytics avancado</li>
+                          <li>✓ Implementação de Learning Analytics avançado</li>
                           <li>✓ Publicacao de 3 artigos em periodicos internacionais</li>
-                          <li>✓ Desenvolvimento de modelo de intervencao personalizada</li>
-                          <li>✓ Certificacao de excelencia em permanencia estudantil</li>
+                          <li>✓ Desenvolvimento de modelo de intervenção personalizada</li>
+                          <li>✓ Certificação de excelência em permanência estudantil</li>
                         </ul>
                       </div>
                     </div>
@@ -2296,12 +2296,12 @@ export default function Home() {
                       </div>
                       <div>
                         <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">2029: Maturidade Institucional</h3>
-                        <p className="text-slate-600 dark:text-slate-400 mb-4">Consolidacao como centro de referencia em permanencia estudantil</p>
+                        <p className="text-slate-600 dark:text-slate-400 mb-4">Consolidação como centro de referência em permanência estudantil</p>
                         <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-400">
-                          <li>✓ Reconhecimento como centro de excelencia regional</li>
-                          <li>✓ Modelo replicavel para outras instituicoes</li>
-                          <li>✓ Taxa de permanencia acima de 90%</li>
-                          <li>✓ Rede de colaboracao com 20 instituicoes nacionais</li>
+                          <li>✓ Reconhecimento como centro de excelência regional</li>
+                          <li>✓ Modelo replicável para outras instituições</li>
+                          <li>✓ Taxa de permanência acima de 90%</li>
+                          <li>✓ Rede de colaboração com 20 instituições nacionais</li>
                         </ul>
                       </div>
                     </div>
@@ -2358,12 +2358,12 @@ export default function Home() {
                       </div>
                     </div>
                     <div className="p-4 bg-white dark:bg-slate-800 rounded-lg">
-                      <p className="font-semibold text-slate-900 dark:text-white mb-3">Metas Estrategicas</p>
+                      <p className="font-semibold text-slate-900 dark:text-white mb-2">Metas Estratégicas</p>
                       <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-400">
                         <li>✓ <strong>Mentores:</strong> 7 (2023) → 150 (2029)</li>
                         <li>✓ <strong>Mentorados:</strong> 14 (2023) → 1.500 (2029)</li>
-                        <li>✓ <strong>Publicacoes:</strong> 0 (2025) → 10 (2029)</li>
-                        <li>✓ <strong>Permanencia:</strong> 85% (2025) → 92% (2029)</li>
+                        <li>✓ <strong>Publicações:</strong> 0 (2025) → 10 (2029)</li>
+                        <li>✓ <strong>Permanência:</strong> 85% (2025) → 92% (2029)</li>
                       </ul>
                     </div>
                   </div>
