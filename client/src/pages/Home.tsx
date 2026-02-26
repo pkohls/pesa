@@ -221,15 +221,7 @@ export default function Home() {
                 {item.label}
               </button>
             ))}
-            <a
-              href={externalDashboardUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-4 py-2 rounded-lg font-semibold transition-all flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-600 text-white hover:shadow-lg"
-            >
-              <BarChart3 className="w-4 h-4" />
-              Dashboard Financeiro
-            </a>
+
           </nav>
 
           {/* Mobile Menu Button */}
@@ -261,15 +253,7 @@ export default function Home() {
                 {item.label}
               </button>
             ))}
-            <a
-              href={externalDashboardUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full px-4 py-2 rounded-lg font-semibold transition-all flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-600 text-white hover:shadow-lg"
-            >
-              <BarChart3 className="w-4 h-4" />
-              Dashboard Financeiro
-            </a>
+
           </div>
         )}
       </header>
