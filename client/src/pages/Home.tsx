@@ -1039,10 +1039,10 @@ export default function Home() {
                       <div className="bg-white dark:bg-slate-800 p-4 rounded-lg border border-emerald-100 dark:border-emerald-900/30">
                         <p className="font-semibold text-slate-900 dark:text-white mb-3">Modelo Teórico: MIPESA</p>
                         <p className="text-sm text-slate-600 dark:text-slate-400 mb-3">
-                          O PESA nasce do <strong>MIPESA</strong> (Modelo Integracionista para a Permanência Estudantil e Sucesso Acadêmico), modelo de autoria de <strong>Pricila Kohls-Santos</strong>, coordenadora do setor e pesquisadora com publicações relevantes sobre permanência estudantil.
+                          O PESA nasce do <strong>MIPESA</strong> (Modelo Integracionista para a Permanência Estudantil e Sucesso Acadêmico), modelo de autoria da <strong>Profª. Drª. Pricila Kohls-Santos</strong>, coordenadora do setor e pesquisadora com publicações relevantes sobre permanência estudantil.
                         </p>
                         <p className="text-xs text-slate-500 dark:text-slate-400 italic">
-                          A coordenadora é pesquisadora ativa na área, com contribuições científicas que fundamentam todas as políticas e ações do PESA.
+                          A coordenadora é pesquisadora ativa na área, membro do Comitê Coordenador da Rede GUIA com contribuições científicas que fundamentam todas as políticas e ações do PESA.
                         </p>
                       </div>
                       
