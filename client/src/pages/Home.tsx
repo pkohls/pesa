@@ -177,6 +177,7 @@ export default function Home() {
     { id: "ciencia", label: "Análise Científica", icon: TrendingUp },
     { id: "historias", label: "Histórias de Sucesso", icon: Heart },
     { id: "roadmap", label: "Roadmap 2026-2029", icon: Target },
+    { id: "apresentacoes", label: "Apresentações Acadêmicas", icon: BookOpen },
   ];
 
   const externalDashboardUrl = "https://8501-iqvglsfjns0hq4qylz31d-ee061de5.us1.manus.computer/#dashboard-de-impacto-financeiro-do-pesa";
@@ -2373,6 +2374,88 @@ export default function Home() {
           </main>
         )}
 
+        {/* Apresentações Acadêmicas Section */}
+        {activeSection === "apresentacoes" && (
+          <div className="space-y-6">
+            <div>
+              <h2 className="text-4xl font-bold text-slate-900 dark:text-white mb-4">Apresentações Acadêmicas</h2>
+              <p className="text-lg text-slate-600 dark:text-slate-300">Participações do PESA em eventos científicos e acadêmicos de relevância internacional.</p>
+            </div>
+
+            <Card className="border-0 shadow-lg bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-900/10 dark:to-cyan-900/10">
+              <CardHeader>
+                <CardTitle className="text-2xl">CLABES - Congreso Latinoamericano sobre Abandono en la Educación Superior</CardTitle>
+                <CardDescription>Rede internacional de pesquisa e prática em permanência estudantil</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                {/* 2024 */}
+                <div className="border-l-4 border-blue-600 pl-4">
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">2024 - Ministrante de Oficina</h3>
+                  <p className="text-sm text-slate-600 dark:text-slate-400 mb-3">
+                    Participação como ministrante da oficina:
+                  </p>
+                  <div className="bg-white dark:bg-slate-800 p-4 rounded-lg border border-blue-200 dark:border-blue-900/30">
+                    <p className="font-semibold text-slate-900 dark:text-white mb-2">
+                      "Acompañamiento estudiantil y interculturalidad: acciones para la permanencia estudiantil"
+                    </p>
+                    <p className="text-sm text-slate-600 dark:text-slate-400">
+                      Apresentação das estratégias e práticas do PESA para acompanhamento estudiantil com foco em interculturalidade e permanência.
+                    </p>
+                  </div>
+                </div>
+
+                {/* 2025 */}
+                <div className="border-l-4 border-emerald-600 pl-4">
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">2025 - Painelista e Ministrante</h3>
+                  <p className="text-sm text-slate-600 dark:text-slate-400 mb-3">
+                    Participação em dois momentos do evento:
+                  </p>
+                  <div className="space-y-3">
+                    <div className="bg-white dark:bg-slate-800 p-4 rounded-lg border border-emerald-200 dark:border-emerald-900/30">
+                      <p className="font-semibold text-slate-900 dark:text-white mb-2">
+                        ✓ Painelista na Conferência de Abertura
+                      </p>
+                      <p className="text-sm text-slate-600 dark:text-slate-400">
+                        Participação como painelista na conferência de abertura do CLABES 2025, discutindo tendências e desafios em permanência estudantil na América Latina.
+                      </p>
+                    </div>
+                    <div className="bg-white dark:bg-slate-800 p-4 rounded-lg border border-emerald-200 dark:border-emerald-900/30">
+                      <p className="font-semibold text-slate-900 dark:text-white mb-2">
+                        ✓ Ministrante de Oficina
+                      </p>
+                      <p className="text-sm text-slate-600 dark:text-slate-400">
+                        Oficina: <strong>"Cultura institucional de permanência"</strong> - Apresentação do modelo MIPESA e das políticas estruturantes do PESA como exemplo de cultura institucional voltada para permanência estudantil.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Impacto */}
+                <div className="bg-gradient-to-r from-blue-100 to-emerald-100 dark:from-blue-900/20 dark:to-emerald-900/20 p-4 rounded-lg border border-blue-200 dark:border-blue-900/30">
+                  <p className="font-semibold text-slate-900 dark:text-white mb-2">Impacto e Relevância</p>
+                  <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+                    <li className="flex items-start gap-2">
+                      <span className="text-blue-600 dark:text-blue-400 mt-1">•</span>
+                      <span>Posicionamento de UCB como referência regional em permanência estudantil</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-blue-600 dark:text-blue-400 mt-1">•</span>
+                      <span>Disseminação do modelo MIPESA para universidades latino-americanas</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-blue-600 dark:text-blue-400 mt-1">•</span>
+                      <span>Contribuição para a rede GUIA e comunidade científica internacional</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-blue-600 dark:text-blue-400 mt-1">•</span>
+                      <span>Intercâmbio de boas práticas e metodologias com outras instituições</span>
+                    </li>
+                  </ul>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        )}
         {/* Footer Stats */}
         <section className="mt-16 pt-12 border-t border-slate-200 dark:border-slate-700">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
