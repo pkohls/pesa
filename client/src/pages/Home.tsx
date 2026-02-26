@@ -968,6 +968,99 @@ export default function Home() {
                 </div>
               </CardContent>
             </Card>
+            {/* Diferenciais Estratégicos */}
+            <section className="mt-16 pt-12 border-t border-slate-200 dark:border-slate-700">
+              <div className="mb-8">
+                <h3 className="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-4">Diferenciais Estratégicos do PESA</h3>
+                <p className="text-lg text-slate-600 dark:text-slate-300">
+                  Dois pilares fundamentais que distinguem o PESA no contexto latino-americano de permanência estudantil.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                {/* RedGUIA */}
+                <Card className="border-2 border-blue-200 dark:border-blue-900/50 shadow-lg hover:shadow-xl transition-shadow bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-900/10 dark:to-cyan-900/10">
+                  <CardHeader className="pb-4">
+                    <div className="flex items-center gap-3 mb-2">
+                      <div className="w-10 h-10 rounded-lg bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center">
+                        <Users className="w-6 h-6 text-blue-600 dark:text-blue-400" />
+                      </div>
+                      <CardTitle className="text-xl text-blue-700 dark:text-blue-400">Participação na RedGUIA</CardTitle>
+                    </div>
+                    <p className="text-sm text-blue-600 dark:text-blue-300 font-semibold">Rede Internacional de Permanência Estudantil</p>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <div className="space-y-3">
+                      <p className="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+                        O PESA integra a <strong>RedGUIA</strong> (Rede de Gestión Universitaria Integral en América Latina), uma rede internacional que mobiliza esforços em toda a América Latina nas questões relacionadas a evasão, permanência e gestão destes processos.
+                      </p>
+                      <div className="bg-white dark:bg-slate-800 p-4 rounded-lg border border-blue-100 dark:border-blue-900/30">
+                        <p className="font-semibold text-slate-900 dark:text-white mb-2">Benefícios da Participação:</p>
+                        <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+                          <li className="flex items-start gap-2">
+                            <span className="text-blue-600 dark:text-blue-400 mt-1">•</span>
+                            <span>Intercâmbio de boas práticas com universidades latino-americanas</span>
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <span className="text-blue-600 dark:text-blue-400 mt-1">•</span>
+                            <span>Acesso a metodologias e ferramentas de gestão de permanência</span>
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <span className="text-blue-600 dark:text-blue-400 mt-1">•</span>
+                            <span>Participação em seminários e eventos internacionais</span>
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <span className="text-blue-600 dark:text-blue-400 mt-1">•</span>
+                            <span>Posicionamento de UCB como referência regional em permanência estudantil</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Base Científica */}
+                <Card className="border-2 border-emerald-200 dark:border-emerald-900/50 shadow-lg hover:shadow-xl transition-shadow bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-900/10 dark:to-teal-900/10">
+                  <CardHeader className="pb-4">
+                    <div className="flex items-center gap-3 mb-2">
+                      <div className="w-10 h-10 rounded-lg bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center">
+                        <BookOpen className="w-6 h-6 text-emerald-600 dark:text-emerald-400" />
+                      </div>
+                      <CardTitle className="text-xl text-emerald-700 dark:text-emerald-400">Base Científica</CardTitle>
+                    </div>
+                    <p className="text-sm text-emerald-600 dark:text-emerald-300 font-semibold">Pesquisa como Fundamento de Políticas</p>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <div className="space-y-3">
+                      <p className="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+                        O PESA utiliza <strong>pesquisa científica como base para proposições, políticas e ações</strong>, garantindo que todas as iniciativas sejam fundamentadas em evidências empíricas e análise rigorosa.
+                      </p>
+                      <div className="bg-white dark:bg-slate-800 p-4 rounded-lg border border-emerald-100 dark:border-emerald-900/30">
+                        <p className="font-semibold text-slate-900 dark:text-white mb-2">Fundamentos Científicos:</p>
+                        <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+                          <li className="flex items-start gap-2">
+                            <span className="text-emerald-600 dark:text-emerald-400 mt-1">✓</span>
+                            <span>Análise de 5.227 estudantes monitorados</span>
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <span className="text-emerald-600 dark:text-emerald-400 mt-1">✓</span>
+                            <span>Matriz de correlação de Pearson com fatores de permanência</span>
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <span className="text-emerald-600 dark:text-emerald-400 mt-1">✓</span>
+                            <span>Pesquisa contínua sobre motivações e fatores de sucesso</span>
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <span className="text-emerald-600 dark:text-emerald-400 mt-1">✓</span>
+                            <span>Decisões baseadas em Learning Analytics e inteligência acadêmica</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </section>
           </div>
         )}
 
