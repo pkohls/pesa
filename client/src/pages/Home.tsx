@@ -1465,6 +1465,15 @@ export default function Home() {
                 <CardTitle>Apresentações Acadêmicas</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
+                <div>
+                  <p className="font-semibold text-slate-900 dark:text-white mb-2">7º Congresso Brasileiro de Psicologia</p>
+                  <p className="text-slate-700 dark:text-slate-300 mb-2">
+                    Apresentação de painel sobre Mentoria Universitária realizado pela estudante Andrea Guerra, sob supervisão da professora Beatriz Brandão.
+                  </p>
+                  <p className="text-sm text-slate-600 dark:text-slate-400">
+                    <strong>Conteúdo:</strong> Relato de experiência e revisão narrativa sobre a atuação dos mentores universitários.
+                  </p>
+                </div>
               </CardContent>
             </Card>
           </div>
@@ -2458,7 +2467,53 @@ export default function Home() {
           </div>
         )}
 
+            <Card className="border-0 shadow-lg bg-gradient-to-br from-rose-50 to-pink-50 dark:from-rose-900/10 dark:to-pink-900/10 mt-6">
+              <CardHeader>
+                <CardTitle className="text-2xl">7º Congresso Brasileiro de Psicologia</CardTitle>
+                <CardDescription>Apresentação de painel sobre Mentoria Universitária</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="border-l-4 border-rose-600 pl-4">
+                  <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-3">Painel: Mentoria Universitária</h3>
+                  
+                  <div className="space-y-3">
+                    <div className="bg-white dark:bg-slate-800 p-4 rounded-lg border border-rose-200 dark:border-rose-900/30">
+                      <p className="font-semibold text-slate-900 dark:text-white mb-2">Apresentadora</p>
+                      <p className="text-sm text-slate-600 dark:text-slate-400">
+                        <strong>Andrea Guerra</strong> (Estudante)
+                      </p>
+                      <p className="text-sm text-slate-600 dark:text-slate-400 mt-2">
+                        Sob supervisão da <strong>Profª. Beatriz Brandão</strong>
+                      </p>
+                    </div>
 
+                    <div className="bg-white dark:bg-slate-800 p-4 rounded-lg border border-rose-200 dark:border-rose-900/30">
+                      <p className="font-semibold text-slate-900 dark:text-white mb-2">Conteúdo da Apresentação</p>
+                      <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+                        <li className="flex items-start gap-2">
+                          <span className="text-rose-600 dark:text-rose-400 mt-1">✓</span>
+                          <span>Relato de experiência sobre mentoria universitária no PESA</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="text-rose-600 dark:text-rose-400 mt-1">✓</span>
+                          <span>Revisão narrativa sobre a atuação dos mentores universitários</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="text-rose-600 dark:text-rose-400 mt-1">✓</span>
+                          <span>Perspectivas psicológicas e educacionais da mentoria</span>
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div className="bg-rose-50 dark:bg-rose-900/10 p-3 rounded border border-rose-200 dark:border-rose-900/30">
+                      <p className="text-xs text-slate-600 dark:text-slate-400">
+                        <strong>Relevância:</strong> Disseminação de conhecimento sobre mentoria universitária na comunidade de psicólogos brasileiros; Validação da prática de mentoria como ferramenta psicoeducacional para permanência estudantil; Envolvimento de estudantes na pesquisa e apresentação de resultados.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
         {/* Footer Stats */}
         <section className="mt-16 pt-12 border-t border-slate-200 dark:border-slate-700">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
