@@ -2449,10 +2449,8 @@ export default function Home() {
                 </div>
               </CardContent>
             </Card>
-          </div>
-        )}
 
-            <Card className="border-0 shadow-lg bg-gradient-to-br from-rose-50 to-pink-50 dark:from-rose-900/10 dark:to-pink-900/10 mt-6">
+            <Card className="border-0 shadow-lg bg-gradient-to-br from-rose-50 to-pink-50 dark:from-rose-900/10 dark:to-pink-900/10">
               <CardHeader>
                 <CardTitle className="text-2xl">7º Congresso Brasileiro de Psicologia</CardTitle>
                 <CardDescription>Apresentação de painel sobre Mentoria Universitária</CardDescription>
@@ -2499,6 +2497,9 @@ export default function Home() {
                 </div>
               </CardContent>
             </Card>
+          </div>
+        )}
+
         {/* Footer Stats */}
         <section className="mt-16 pt-12 border-t border-slate-200 dark:border-slate-700">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
