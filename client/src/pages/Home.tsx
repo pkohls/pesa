@@ -1460,22 +1460,7 @@ export default function Home() {
               </CardContent>
             </Card>
 
-            <Card className="border-0 shadow-lg bg-gradient-to-br from-emerald-50 to-emerald-100 dark:from-emerald-900/20 dark:to-emerald-800/20">
-              <CardHeader>
-                <CardTitle>Apresentações Acadêmicas</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div>
-                  <p className="font-semibold text-slate-900 dark:text-white mb-2">7º Congresso Brasileiro de Psicologia</p>
-                  <p className="text-slate-700 dark:text-slate-300 mb-2">
-                    Apresentação de painel sobre Mentoria Universitária realizado pela estudante Andrea Guerra, sob supervisão da professora Beatriz Brandão.
-                  </p>
-                  <p className="text-sm text-slate-600 dark:text-slate-400">
-                    <strong>Conteúdo:</strong> Relato de experiência e revisão narrativa sobre a atuação dos mentores universitários.
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
+
           </div>
         )}
 
