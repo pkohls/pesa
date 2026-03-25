@@ -172,7 +172,6 @@ export default function Home() {
     { id: "acolhida", label: "Acolhida Acadêmica", icon: Users },
     { id: "stay360", label: "Stay360", icon: BookOpen },
     { id: "research", label: "Pesquisa", icon: BarChart3 },
-    { id: "financial", label: "Impacto Financeiro", icon: DollarSign },
     { id: "acompanhamento", label: "Acompanhamento", icon: BarChart3 },
     { id: "ciencia", label: "Análise Científica", icon: TrendingUp },
     { id: "historias", label: "Histórias de Sucesso", icon: Heart },
